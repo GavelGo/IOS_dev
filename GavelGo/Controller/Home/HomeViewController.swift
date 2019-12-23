@@ -21,7 +21,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        navigationController?.navigationBar.isHidden = true
+        
         mSearchView.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
         mSearchView.layer.borderWidth = 0.5
         mSearchView.layer.cornerRadius = 3
@@ -184,6 +186,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ProductInfoViewController") as! ProductInfoViewController
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 }

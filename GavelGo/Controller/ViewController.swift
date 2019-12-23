@@ -27,9 +27,7 @@ class ViewController: UIViewController {
         mPassword.autocorrectionType = .no
         mPassword.isSecureTextEntry = true
         
-        mSignInBtnView.layer.cornerRadius = 10
-        mSignInBtnView.layer.borderWidth = 1
-        mSignInBtnView.layer.borderColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 0.8571473394, alpha: 1)
+        mSignInBtnView.themeSaveBtn()
         
     }
 
@@ -42,11 +40,11 @@ class ViewController: UIViewController {
             return
         }
         
-        guard let rootViewController = window.rootViewController else {
-            return
-        }
+//        guard let rootViewController = window.rootViewController else {
+//            return
+//        }
         
-        let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "HomeTabBarViewController") as! HomeTabBarViewController
+        let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "HomeNavigationController") as! HomeNavigationController
         UIView.transition(with: window, duration: 0.7, options: .transitionCrossDissolve, animations: {
             window.rootViewController = navigationController
         }) { (completed) in
@@ -56,6 +54,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func signUpAction(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 }

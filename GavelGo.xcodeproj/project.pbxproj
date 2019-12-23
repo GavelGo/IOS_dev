@@ -13,6 +13,10 @@
 		3D8F593B23AF2D6E00FA5A67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D8F593923AF2D6E00FA5A67 /* Main.storyboard */; };
 		3D8F593D23AF2D6F00FA5A67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D8F593C23AF2D6F00FA5A67 /* Assets.xcassets */; };
 		3D8F594023AF2D6F00FA5A67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D8F593E23AF2D6F00FA5A67 /* LaunchScreen.storyboard */; };
+		3DB5101923B13468007403A7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5101823B13468007403A7 /* SignUpViewController.swift */; };
+		3DD57BEF23B14D3100819C4A /* ConsumerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */; };
+		3DD57BF123B155E000819C4A /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BF023B155E000819C4A /* HomeNavigationController.swift */; };
+		3DD57BF323B15C7900819C4A /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BF223B15C7900819C4A /* ProductInfoViewController.swift */; };
 		3DFBC0BE23AF78C3003EF278 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBC0BD23AF78C3003EF278 /* HomeViewController.swift */; };
 		3DFBC0C023AF78D7003EF278 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBC0BF23AF78D7003EF278 /* NotificationViewController.swift */; };
 		3DFBC0C223AF78E5003EF278 /* MesasgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBC0C123AF78E5003EF278 /* MesasgeViewController.swift */; };
@@ -34,6 +38,10 @@
 		3D8F593C23AF2D6F00FA5A67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D8F593F23AF2D6F00FA5A67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D8F594123AF2D6F00FA5A67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DB5101823B13468007403A7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerViewController.swift; sourceTree = "<group>"; };
+		3DD57BF023B155E000819C4A /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
+		3DD57BF223B15C7900819C4A /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
 		3DFBC0BD23AF78C3003EF278 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3DFBC0BF23AF78D7003EF278 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		3DFBC0C123AF78E5003EF278 /* MesasgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesasgeViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +120,9 @@
 			children = (
 				3DFBC0BC23AF78A8003EF278 /* Home */,
 				3D8F593723AF2D6E00FA5A67 /* ViewController.swift */,
+				3DB5101823B13468007403A7 /* SignUpViewController.swift */,
+				3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */,
+				3DD57BF023B155E000819C4A /* HomeNavigationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -134,6 +145,7 @@
 				3DFBC0C123AF78E5003EF278 /* MesasgeViewController.swift */,
 				3DFBC0C323AF78F9003EF278 /* SettingsViewController.swift */,
 				3DFBC0C523AF7981003EF278 /* HomeTabBarViewController.swift */,
+				3DD57BF223B15C7900819C4A /* ProductInfoViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -298,10 +310,14 @@
 				3DFBC0C023AF78D7003EF278 /* NotificationViewController.swift in Sources */,
 				3D8F593823AF2D6E00FA5A67 /* ViewController.swift in Sources */,
 				3DFBC0C923AF7C48003EF278 /* Utils.swift in Sources */,
+				3DD57BF323B15C7900819C4A /* ProductInfoViewController.swift in Sources */,
 				3DFBC0C423AF78F9003EF278 /* SettingsViewController.swift in Sources */,
 				3D8F593423AF2D6E00FA5A67 /* AppDelegate.swift in Sources */,
+				3DD57BF123B155E000819C4A /* HomeNavigationController.swift in Sources */,
 				3DFBC0CC23AF8254003EF278 /* HomeCollectionViewCell.swift in Sources */,
+				3DB5101923B13468007403A7 /* SignUpViewController.swift in Sources */,
 				3D8F593623AF2D6E00FA5A67 /* SceneDelegate.swift in Sources */,
+				3DD57BEF23B14D3100819C4A /* ConsumerViewController.swift in Sources */,
 				3DFBC0C623AF7981003EF278 /* HomeTabBarViewController.swift in Sources */,
 				3DFBC0C223AF78E5003EF278 /* MesasgeViewController.swift in Sources */,
 				3DFBC0CE23AF8420003EF278 /* HomeStruct.swift in Sources */,
