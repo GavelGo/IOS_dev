@@ -1,0 +1,57 @@
+PODS:
+  - MaterialComponents/AnimationTiming (98.0.0)
+  - MaterialComponents/Cards (98.0.0):
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Icons/ic_check_circle
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
+  - MaterialComponents/Elevation (98.0.0):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/Ink (98.0.0):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/private/Color (98.0.0)
+  - MaterialComponents/private/Icons/Base (98.0.0)
+  - MaterialComponents/private/Icons/ic_check_circle (98.0.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Math (98.0.0)
+  - MaterialComponents/Ripple (98.0.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/ShadowElevations (98.0.0)
+  - MaterialComponents/ShadowLayer (98.0.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Shapes (98.0.0):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - SDWebImage (5.4.0):
+    - SDWebImage/Core (= 5.4.0)
+  - SDWebImage/Core (5.4.0)
+  - SkyFloatingLabelTextField (3.8.0)
+
+DEPENDENCIES:
+  - MaterialComponents/Cards
+  - MaterialComponents/Ripple
+  - SDWebImage (~> 5.0)
+  - SkyFloatingLabelTextField (~> 3.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MaterialComponents
+    - SDWebImage
+    - SkyFloatingLabelTextField
+
+SPEC CHECKSUMS:
+  MaterialComponents: 2a8b6fb1bf6655d3e2254dadae5edbb05559e1d7
+  SDWebImage: 5bf6aec6481ae2a062bdc59f9d6c1d1e552090e0
+  SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
+
+PODFILE CHECKSUM: 8ccc6450c5c4d7f1c49127978e8838bda3098197
+
+COCOAPODS: 1.5.3
