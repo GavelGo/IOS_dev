@@ -86,6 +86,12 @@ class SignUpViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    func registerConsumerUser() {
+        
+        
+        
+    }
+    
 }
 
 extension SignUpViewController: UIPickerViewDelegate, UIPickerViewDataSource {

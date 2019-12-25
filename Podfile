@@ -10,5 +10,8 @@ target 'GavelGo' do
   pod 'MaterialComponents/Cards'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'SDWebImage', '~> 5.0'
+  pod 'Alamofire', '~> 4.9.0'
+  pod 'SVProgressHUD'
+  pod 'Toaster'
 
 end

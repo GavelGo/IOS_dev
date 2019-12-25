@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D151B7F23B3C025000395C9 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D151B7E23B3C025000395C9 /* ForgotPasswordViewController.swift */; };
+		3D151B8223B3C205000395C9 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D151B8123B3C205000395C9 /* WebService.swift */; };
+		3D151B8423B3C9A7000395C9 /* APIResponseStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D151B8323B3C9A7000395C9 /* APIResponseStruct.swift */; };
 		3D8F593423AF2D6E00FA5A67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F593323AF2D6E00FA5A67 /* AppDelegate.swift */; };
 		3D8F593623AF2D6E00FA5A67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F593523AF2D6E00FA5A67 /* SceneDelegate.swift */; };
 		3D8F593823AF2D6E00FA5A67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F593723AF2D6E00FA5A67 /* ViewController.swift */; };
@@ -17,6 +20,7 @@
 		3DD57BEF23B14D3100819C4A /* ConsumerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */; };
 		3DD57BF123B155E000819C4A /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BF023B155E000819C4A /* HomeNavigationController.swift */; };
 		3DD57BF323B15C7900819C4A /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BF223B15C7900819C4A /* ProductInfoViewController.swift */; };
+		3DF9153423B3D26200F28F52 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF9153323B3D26200F28F52 /* APIs.swift */; };
 		3DFBC0BE23AF78C3003EF278 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBC0BD23AF78C3003EF278 /* HomeViewController.swift */; };
 		3DFBC0C023AF78D7003EF278 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBC0BF23AF78D7003EF278 /* NotificationViewController.swift */; };
 		3DFBC0C223AF78E5003EF278 /* MesasgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBC0C123AF78E5003EF278 /* MesasgeViewController.swift */; };
@@ -30,6 +34,9 @@
 
 /* Begin PBXFileReference section */
 		1FFE5BC1B03B27533FD460DB /* Pods-GavelGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GavelGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GavelGo/Pods-GavelGo.release.xcconfig"; sourceTree = "<group>"; };
+		3D151B7E23B3C025000395C9 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		3D151B8123B3C205000395C9 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		3D151B8323B3C9A7000395C9 /* APIResponseStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseStruct.swift; sourceTree = "<group>"; };
 		3D8F593023AF2D6E00FA5A67 /* GavelGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GavelGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8F593323AF2D6E00FA5A67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D8F593523AF2D6E00FA5A67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +49,7 @@
 		3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerViewController.swift; sourceTree = "<group>"; };
 		3DD57BF023B155E000819C4A /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		3DD57BF223B15C7900819C4A /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
+		3DF9153323B3D26200F28F52 /* APIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
 		3DFBC0BD23AF78C3003EF278 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3DFBC0BF23AF78D7003EF278 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		3DFBC0C123AF78E5003EF278 /* MesasgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesasgeViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +74,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D151B7C23B3BFC1000395C9 /* LogInScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3D8F593723AF2D6E00FA5A67 /* ViewController.swift */,
+				3D151B7E23B3C025000395C9 /* ForgotPasswordViewController.swift */,
+			);
+			path = LogInScreen;
+			sourceTree = "<group>";
+		};
+		3D151B7D23B3BFE1000395C9 /* SignUp Screen */ = {
+			isa = PBXGroup;
+			children = (
+				3DB5101823B13468007403A7 /* SignUpViewController.swift */,
+				3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */,
+			);
+			path = "SignUp Screen";
+			sourceTree = "<group>";
+		};
+		3D151B8023B3C1E9000395C9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3D151B8123B3C205000395C9 /* WebService.swift */,
+				3DF9153323B3D26200F28F52 /* APIs.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		3D8F592723AF2D6E00FA5A67 = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +145,9 @@
 		3D8F594823AF335500FA5A67 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3D151B8023B3C1E9000395C9 /* Networking */,
 				3DFBC0CD23AF8420003EF278 /* HomeStruct.swift */,
+				3D151B8323B3C9A7000395C9 /* APIResponseStruct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,11 +155,9 @@
 		3D8F594923AF335E00FA5A67 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3D151B7D23B3BFE1000395C9 /* SignUp Screen */,
+				3D151B7C23B3BFC1000395C9 /* LogInScreen */,
 				3DFBC0BC23AF78A8003EF278 /* Home */,
-				3D8F593723AF2D6E00FA5A67 /* ViewController.swift */,
-				3DB5101823B13468007403A7 /* SignUpViewController.swift */,
-				3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */,
-				3DD57BF023B155E000819C4A /* HomeNavigationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -139,6 +174,7 @@
 		3DFBC0BC23AF78A8003EF278 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3DD57BF023B155E000819C4A /* HomeNavigationController.swift */,
 				3DFBC0CA23AF8212003EF278 /* Cell */,
 				3DFBC0BD23AF78C3003EF278 /* HomeViewController.swift */,
 				3DFBC0BF23AF78D7003EF278 /* NotificationViewController.swift */,
@@ -283,17 +319,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GavelGo/Pods-GavelGo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -307,14 +349,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D151B7F23B3C025000395C9 /* ForgotPasswordViewController.swift in Sources */,
 				3DFBC0C023AF78D7003EF278 /* NotificationViewController.swift in Sources */,
 				3D8F593823AF2D6E00FA5A67 /* ViewController.swift in Sources */,
 				3DFBC0C923AF7C48003EF278 /* Utils.swift in Sources */,
+				3D151B8223B3C205000395C9 /* WebService.swift in Sources */,
+				3DF9153423B3D26200F28F52 /* APIs.swift in Sources */,
 				3DD57BF323B15C7900819C4A /* ProductInfoViewController.swift in Sources */,
 				3DFBC0C423AF78F9003EF278 /* SettingsViewController.swift in Sources */,
 				3D8F593423AF2D6E00FA5A67 /* AppDelegate.swift in Sources */,
 				3DD57BF123B155E000819C4A /* HomeNavigationController.swift in Sources */,
 				3DFBC0CC23AF8254003EF278 /* HomeCollectionViewCell.swift in Sources */,
+				3D151B8423B3C9A7000395C9 /* APIResponseStruct.swift in Sources */,
 				3DB5101923B13468007403A7 /* SignUpViewController.swift in Sources */,
 				3D8F593623AF2D6E00FA5A67 /* SceneDelegate.swift in Sources */,
 				3DD57BEF23B14D3100819C4A /* ConsumerViewController.swift in Sources */,
