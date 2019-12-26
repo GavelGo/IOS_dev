@@ -19,6 +19,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var mSignUpView: UIView!
     
     let mListOfUserTypes = ["Consumer", "Partner"]
+    var picker: UIPickerView!
+    var currentPickerViewSelectedRow : Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +56,6 @@ class SignUpViewController: UIViewController {
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
 
-        let picker: UIPickerView
         picker = UIPickerView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 150))
         picker.backgroundColor = .white
         
@@ -67,6 +68,10 @@ class SignUpViewController: UIViewController {
     }
     
     @objc func pickerDoneButtonAction(){
+        if currentPickerViewSelectedRow == nil {
+            self.mUserTypetf.text = mListOfUserTypes[0]
+            self.currentPickerViewSelectedRow = 0
+        }
         mUserTypetf.resignFirstResponder()
     }
     
@@ -76,9 +81,14 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpAction(_ sender: Any) {
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ConsumerViewController") as! ConsumerViewController
-        vc.userType = .CONSUMER
-        navigationController?.pushViewController(vc, animated: true)
+        let userType = mUserTypetf.text
+        if userType == "Consumer" {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "ConsumerViewController") as! ConsumerViewController
+            navigationController?.pushViewController(vc, animated: true)
+        } else if userType == "Partner" {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "PartnerViewController") as! PartnerViewController
+            navigationController?.pushViewController(vc, animated: true)
+        }
         
     }
     
@@ -109,7 +119,8 @@ extension SignUpViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        mUserTypetf.text = mListOfUserTypes[row]
+        self.mUserTypetf.text = mListOfUserTypes[row]
+        self.currentPickerViewSelectedRow = row
     }
     
 }

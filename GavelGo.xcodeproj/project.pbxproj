@@ -20,6 +20,10 @@
 		3DD57BEF23B14D3100819C4A /* ConsumerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */; };
 		3DD57BF123B155E000819C4A /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BF023B155E000819C4A /* HomeNavigationController.swift */; };
 		3DD57BF323B15C7900819C4A /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BF223B15C7900819C4A /* ProductInfoViewController.swift */; };
+		3DF3D34223B5188900F3C708 /* PartnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3D34123B5188900F3C708 /* PartnerViewController.swift */; };
+		3DF3D34423B51C9000F3C708 /* JCUIImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3D34323B51C9000F3C708 /* JCUIImagePickerManager.swift */; };
+		3DF3D34623B5520300F3C708 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3D34523B5520300F3C708 /* AddProductViewController.swift */; };
+		3DF3D34823B553DC00F3C708 /* StructCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3D34723B553DC00F3C708 /* StructCategories.swift */; };
 		3DF9153423B3D26200F28F52 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF9153323B3D26200F28F52 /* APIs.swift */; };
 		3DFBC0BE23AF78C3003EF278 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBC0BD23AF78C3003EF278 /* HomeViewController.swift */; };
 		3DFBC0C023AF78D7003EF278 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBC0BF23AF78D7003EF278 /* NotificationViewController.swift */; };
@@ -49,6 +53,10 @@
 		3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerViewController.swift; sourceTree = "<group>"; };
 		3DD57BF023B155E000819C4A /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		3DD57BF223B15C7900819C4A /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
+		3DF3D34123B5188900F3C708 /* PartnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerViewController.swift; sourceTree = "<group>"; };
+		3DF3D34323B51C9000F3C708 /* JCUIImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCUIImagePickerManager.swift; sourceTree = "<group>"; };
+		3DF3D34523B5520300F3C708 /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
+		3DF3D34723B553DC00F3C708 /* StructCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructCategories.swift; sourceTree = "<group>"; };
 		3DF9153323B3D26200F28F52 /* APIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
 		3DFBC0BD23AF78C3003EF278 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3DFBC0BF23AF78D7003EF278 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +96,8 @@
 			children = (
 				3DB5101823B13468007403A7 /* SignUpViewController.swift */,
 				3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */,
+				3DF3D34123B5188900F3C708 /* PartnerViewController.swift */,
+				3DF3D34523B5520300F3C708 /* AddProductViewController.swift */,
 			);
 			path = "SignUp Screen";
 			sourceTree = "<group>";
@@ -148,6 +158,7 @@
 				3D151B8023B3C1E9000395C9 /* Networking */,
 				3DFBC0CD23AF8420003EF278 /* HomeStruct.swift */,
 				3D151B8323B3C9A7000395C9 /* APIResponseStruct.swift */,
+				3DF3D34723B553DC00F3C708 /* StructCategories.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				3DFBC0C823AF7C48003EF278 /* Utils.swift */,
+				3DF3D34323B51C9000F3C708 /* JCUIImagePickerManager.swift */,
 			);
 			path = Extra;
 			sourceTree = "<group>";
@@ -349,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DF3D34623B5520300F3C708 /* AddProductViewController.swift in Sources */,
 				3D151B7F23B3C025000395C9 /* ForgotPasswordViewController.swift in Sources */,
 				3DFBC0C023AF78D7003EF278 /* NotificationViewController.swift in Sources */,
 				3D8F593823AF2D6E00FA5A67 /* ViewController.swift in Sources */,
@@ -357,8 +370,11 @@
 				3DF9153423B3D26200F28F52 /* APIs.swift in Sources */,
 				3DD57BF323B15C7900819C4A /* ProductInfoViewController.swift in Sources */,
 				3DFBC0C423AF78F9003EF278 /* SettingsViewController.swift in Sources */,
+				3DF3D34423B51C9000F3C708 /* JCUIImagePickerManager.swift in Sources */,
 				3D8F593423AF2D6E00FA5A67 /* AppDelegate.swift in Sources */,
+				3DF3D34223B5188900F3C708 /* PartnerViewController.swift in Sources */,
 				3DD57BF123B155E000819C4A /* HomeNavigationController.swift in Sources */,
+				3DF3D34823B553DC00F3C708 /* StructCategories.swift in Sources */,
 				3DFBC0CC23AF8254003EF278 /* HomeCollectionViewCell.swift in Sources */,
 				3D151B8423B3C9A7000395C9 /* APIResponseStruct.swift in Sources */,
 				3DB5101923B13468007403A7 /* SignUpViewController.swift in Sources */,

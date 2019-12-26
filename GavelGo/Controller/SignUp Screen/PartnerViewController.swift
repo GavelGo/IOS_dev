@@ -1,43 +1,35 @@
 //
-//  ConsumerViewController.swift
+//  PartnerViewController.swift
 //  GavelGo
 //
-//  Created by mac on 24/12/19.
+//  Created by mac on 26/12/19.
 //  Copyright © 2019 Minder. All rights reserved.
 //
 
 import UIKit
 import SkyFloatingLabelTextField
 
-enum SignUp {
-    case CONSUMER
-    case PARTNER
-}
+class PartnerViewController: UIViewController {
 
-class ConsumerViewController: UIViewController {
-    
-    @IBOutlet weak var mTitle: UILabel!
-    @IBOutlet weak var mUserImage: UIImageView!
+    @IBOutlet weak var mUserImg: UIImageView!
     @IBOutlet weak var mFirstName: SkyFloatingLabelTextField!
     @IBOutlet weak var mLastName: SkyFloatingLabelTextField!
     @IBOutlet weak var mPhone: SkyFloatingLabelTextField!
     @IBOutlet weak var mAddress: SkyFloatingLabelTextField!
-    @IBOutlet weak var mSuit: SkyFloatingLabelTextField!
+    @IBOutlet weak var mSuite: SkyFloatingLabelTextField!
     @IBOutlet weak var mCity: SkyFloatingLabelTextField!
     @IBOutlet weak var mState: SkyFloatingLabelTextField!
     @IBOutlet weak var mZipcode: SkyFloatingLabelTextField!
     @IBOutlet weak var mDescription: SkyFloatingLabelTextField!
-    @IBOutlet weak var mSaveBtnView: UIView!
-    @IBOutlet weak var mBtnSave: UIButton!
-    @IBOutlet weak var mCancelBtnView: UIView!
-    @IBOutlet weak var mBtnCancel: UIButton!
+    @IBOutlet weak var mSaveView: UIView!
+    @IBOutlet weak var mAddProductView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mSaveBtnView.themeSaveBtn()
-        mCancelBtnView.themeSaveBtn()
-        mUserImage.makeRounded()
+        mSaveView.themeSaveBtn()
+        mAddProductView.themeSaveBtn()
+        mUserImg.makeRounded()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -63,22 +55,29 @@ class ConsumerViewController: UIViewController {
         }
     }
     
-    @IBAction func browseImageAction(_ sender: Any) {
+    @IBAction func browseUserImgAction(_ sender: Any) {
         
         JCUIImagePickerManager.sharedInstance.pickImageFrom(allowsEditing: true, sourceType: .photoLibrary, target: self) { (info, error) in
+            print("Image Callback.....")
             if error == nil {
                 let img = info?[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage;
-                self.mUserImage.image = img
+                print("Image Selected : \(img?.description)")
+                self.mUserImg.image = img
+            } else {
+                print("Error : \(error)")
             }
         }
         
     }
     
-    @IBAction func saveBtnAction(_ sender: Any) {
+    @IBAction func saveAccountAction(_ sender: Any) {
     }
     
-    @IBAction func cancelBtnAction(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+    @IBAction func addProductAction(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(identifier: "AddProductViewController") as! AddProductViewController
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 }

@@ -37,18 +37,14 @@ class WebService {
         }
         
         if allowHud {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                self.showHUD();
-            }
+            self.showHUD();
         }
         UIApplication.shared.isNetworkActivityIndicatorVisible = true;
         let request = Alamofire.request(urlString, method: method, parameters: dicParameters as? [String: String], encoding: URLEncoding.default, headers: dicHeader as? [String: String]).responseJSON {
             (dataResponse) in
 
             if allowHud {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    self.hideHUD();
-                }
+                self.hideHUD();
             }
             if self.allowedAPILogs {
                 print("Response : ", dataResponse.result.value);
@@ -56,21 +52,6 @@ class WebService {
             UIApplication.shared.isNetworkActivityIndicatorVisible = false;
             return complition(dataResponse.result.value, dataResponse.result.error);
         }
-        
-//        let request = Alamofire.request(urlString, method: method, parameters: dicParameters as? [String: String], encoding: URLEncoding.default, headers: dicHeader as? [String: String]).responseData { (response) in
-//
-//            if allowHud {
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-//                    self.hideHUD();
-//                }
-//            }
-//            if self.allowedAPILogs {
-//                print("Response : ", response.result.value);
-//            }
-//            UIApplication.shared.isNetworkActivityIndicatorVisible = false;
-//            return complition(response, response.result.error);
-//
-//        }
         
         request.downloadProgress {
             (progress) in

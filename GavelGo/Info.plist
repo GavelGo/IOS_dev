@@ -63,5 +63,19 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>We will use your camera to capture user profile picture</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Location Required</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location Required</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We will use your photo library to get profile picture.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We will use your photo library to get profile picture.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location Required</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Location Required</string>
 </dict>
 </plist>

@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var mEmail: SkyFloatingLabelTextField!
     @IBOutlet weak var mPassword: SkyFloatingLabelTextField!
     @IBOutlet weak var mSignInBtnView: UIView!
-    
+    @IBOutlet weak var mSignInIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var mSignInBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
         mPassword.autocorrectionType = .no
         mPassword.isSecureTextEntry = true
         
+        mSignInIndicator.isHidden = true
         mSignInBtnView.themeSaveBtn()
         
     }
@@ -65,6 +67,10 @@ class ViewController: UIViewController {
     
     func authentication(userName: String, password: String) {
         
+        mSignInBtn.isHidden = true
+        mSignInIndicator.isHidden = false
+        mSignInIndicator.startAnimating()
+        
         let header = NSMutableDictionary.init(dictionary: ["Content-Type" : "application/json"])
         
         let params = NSMutableDictionary.init()
@@ -72,6 +78,10 @@ class ViewController: UIViewController {
                                  "password" : password])
         
         WebService.sharedObject().callWebservice(urlString: APIs.LOGIN, method: .post, dicHeader: header, dicParameters: params, allowHud: false) { (response, error) in
+            
+            self.mSignInIndicator.stopAnimating()
+            self.mSignInIndicator.isHidden = true
+            self.mSignInBtn.isHidden = false
             
             guard let data = response else { return }
                do {
