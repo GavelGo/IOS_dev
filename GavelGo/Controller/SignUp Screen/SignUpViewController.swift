@@ -8,6 +8,7 @@
 
 import UIKit
 import SkyFloatingLabelTextField
+import Toaster
 
 class SignUpViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var mConfirmPassword: SkyFloatingLabelTextField!
     @IBOutlet weak var mUserTypetf: UITextField!
     @IBOutlet weak var mSignUpView: UIView!
+    @IBOutlet weak var mSignInActivityIndicator: UIActivityIndicatorView!
     
     let mListOfUserTypes = ["Consumer", "Partner"]
     var picker: UIPickerView!
@@ -28,20 +30,31 @@ class SignUpViewController: UIViewController {
         mUserName.placeholder = "Username"
         mUserName.keyboardType = .default
         mUserName.autocorrectionType = .no
+        //mUserName.placeholderFont = UIFont.init(name: mUserName.font!.fontName, size: 13)
         
         mEmail.placeholder = "Email"
         mEmail.keyboardType = .emailAddress
         mEmail.autocorrectionType = .no
+        //mEmail.placeholderFont = UIFont.init(name: mEmail.font!.fontName, size: 13)
         
         mPassword.placeholder = "Password"
         mPassword.autocorrectionType = .no
         mPassword.isSecureTextEntry = true
+        //mPassword.placeholderFont = UIFont.init(name: mPassword.font!.fontName, size: 13)
         
         mConfirmPassword.placeholder = "Confirm Password"
         mConfirmPassword.autocorrectionType = .no
         mConfirmPassword.isSecureTextEntry = true
+        //mConfirmPassword.placeholderFont = UIFont.init(name: mConfirmPassword.font!.fontName, size: 10)
+        
+        mUserName.delegate = self
+        mEmail.delegate = self
+        mPassword.delegate = self
+        mConfirmPassword.delegate = self
         
         mSignUpView.themeSaveBtn()
+        
+        mSignInActivityIndicator.isHidden = true
         
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
@@ -81,14 +94,53 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpAction(_ sender: Any) {
         
+        let userName = mUserName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let email = mEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = mPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let confirmPassword = mConfirmPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        if userName!.isEmpty {
+            mUserName.errorMessage = "Please Enter Username"
+            return
+        } else if email!.isEmpty {
+            mEmail.errorMessage = "Please Enter Email"
+            return
+        } else if password!.isEmpty {
+            mPassword.errorMessage = "Please Enter Password"
+            return
+        } else if confirmPassword!.isEmpty {
+            mConfirmPassword.errorMessage = "Please Enter Confirm Password"
+            return
+        } else {
+            
+            if !email!.isValidEmail() {
+                mEmail.errorMessage = "Please Enter Valid Email"
+                return
+            }
+            if password != confirmPassword {
+                mConfirmPassword.errorMessage = "Please Enter Valid Confirm Password"
+                return
+            }
+            
+            mUserName.errorMessage = ""
+            mEmail.errorMessage = ""
+            mPassword.errorMessage = ""
+            mConfirmPassword.errorMessage = ""
+            
+        }
+
         let userType = mUserTypetf.text
         if userType == "Consumer" {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "ConsumerViewController") as! ConsumerViewController
-            navigationController?.pushViewController(vc, animated: true)
+            registerConsumerUser(userName: userName!, email: email!, password: password!)
         } else if userType == "Partner" {
             let vc = storyboard?.instantiateViewController(withIdentifier: "PartnerViewController") as! PartnerViewController
             navigationController?.pushViewController(vc, animated: true)
+        } else {
+            print("UserType Empty...")
         }
+        
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "PartnerViewController") as! PartnerViewController
+//        navigationController?.pushViewController(vc, animated: true)
         
     }
     
@@ -96,9 +148,26 @@ class SignUpViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    func registerConsumerUser() {
+    func registerConsumerUser(userName: String, email: String, password: String) {
         
+        self.mSignInActivityIndicator.isHidden = false
+        self.mSignInActivityIndicator.startAnimating()
         
+        let header = NSMutableDictionary.init(dictionary: ["Content-Type" : "application/json"])
+        
+        let params = NSMutableDictionary.init()
+        params.addEntries(from: ["username" : userName,
+                                 "email" : email,
+                                 "password" : password])
+        
+        WebService.sharedObject().callWebservice(urlString: APIs.REGISTER, method: .post, dicHeader: header, dicParameters: params, allowHud: false) { (response, error) in
+            self.mSignInActivityIndicator.stopAnimating()
+            self.mSignInActivityIndicator.isHidden = true
+            
+//            let vc = storyboard?.instantiateViewController(withIdentifier: "ConsumerViewController") as! ConsumerViewController
+//            navigationController?.pushViewController(vc, animated: true)
+            
+        }
         
     }
     
@@ -123,4 +192,11 @@ extension SignUpViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         self.currentPickerViewSelectedRow = row
     }
     
+}
+
+extension SignUpViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 }

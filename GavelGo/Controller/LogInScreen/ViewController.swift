@@ -29,6 +29,9 @@ class ViewController: UIViewController {
         mPassword.autocorrectionType = .no
         mPassword.isSecureTextEntry = true
         
+        mEmail.delegate = self
+        mPassword.delegate = self
+        
         mSignInIndicator.isHidden = true
         mSignInBtnView.themeSaveBtn()
         
@@ -133,3 +136,9 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+}

@@ -14,7 +14,9 @@ class AddProductViewController: UIViewController {
     @IBOutlet weak var mProductName: SkyFloatingLabelTextField!
     @IBOutlet weak var mSelectCategoryTf: UITextField!
     @IBOutlet weak var mSelectSubCategoryTf: UITextField!
-    @IBOutlet weak var mProductImage: UIImageView!
+    @IBOutlet weak var mProductImage1: UIButton!
+    @IBOutlet weak var mProductImage2: UIButton!
+    @IBOutlet weak var mProductImage3: UIButton!
     @IBOutlet weak var mPriceTf: UITextField!
     @IBOutlet weak var mUnitBtn: UIButton!
     @IBOutlet weak var mSelectKeywords: SkyFloatingLabelTextField!
@@ -22,6 +24,7 @@ class AddProductViewController: UIViewController {
     @IBOutlet weak var mSaveBtnView: UIView!
     @IBOutlet weak var mCancelBtnView: UIView!
     @IBOutlet weak var mSaveBtn: UIButton!
+    @IBOutlet weak var mSaveAvtivityIndicator: UIActivityIndicatorView!
     
     var categoryPicker: UIPickerView!
     var subCategoryPicker: UIPickerView!
@@ -33,6 +36,21 @@ class AddProductViewController: UIViewController {
 
         mSaveBtnView.themeSaveBtn()
         mCancelBtnView.themeSaveBtn()
+        
+        mProductName.delegate = self
+        mSelectKeywords.delegate = self
+        
+        mProductImage1.layer.borderWidth = 0.5
+        mProductImage1.layer.borderColor = #colorLiteral(red: 0.1333333333, green: 0.5490196078, blue: 0.1333333333, alpha: 1)
+        mProductImage1.layer.cornerRadius = 3
+        
+        mProductImage2.layer.borderWidth = 0.5
+        mProductImage2.layer.borderColor = #colorLiteral(red: 0.1333333333, green: 0.5490196078, blue: 0.1333333333, alpha: 1)
+        mProductImage2.layer.cornerRadius = 3
+        
+        mProductImage3.layer.borderWidth = 0.5
+        mProductImage3.layer.borderColor = #colorLiteral(red: 0.1333333333, green: 0.5490196078, blue: 0.1333333333, alpha: 1)
+        mProductImage3.layer.cornerRadius = 3
         
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
@@ -102,7 +120,31 @@ class AddProductViewController: UIViewController {
         
     }
     
-    @IBAction func browseImgAction(_ sender: Any) {
+    @IBAction func browseImgAction(_ sender: UIButton) {
+        
+        JCUIImagePickerManager.sharedInstance.pickImageFrom(allowsEditing: true, sourceType: .photoLibrary, target: self) { (info, error) in
+            if error == nil {
+                
+                let img = info?[.editedImage] as? UIImage
+                print("Image Loaded : Tag - \(sender.tag)")
+                switch sender.tag {
+                case 0:
+                    print("Image Loaded : Tag - 0 :  \(sender.tag)")
+                    self.mProductImage1.setImage(img, for: .normal)
+                    break
+                case 1:
+                    self.mProductImage2.setImage(img, for: .normal)
+                    break
+                case 2:
+                    self.mProductImage3.setImage(img, for: .normal)
+                    break
+                default:
+                    break
+                }
+                
+            }
+        }
+        
     }
     
     @IBAction func unitAction(_ sender: Any) {
@@ -142,4 +184,11 @@ extension AddProductViewController: UIPickerViewDelegate, UIPickerViewDataSource
         }
     }
     
+}
+
+extension AddProductViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 }

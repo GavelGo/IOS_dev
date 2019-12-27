@@ -23,6 +23,7 @@ class PartnerViewController: UIViewController {
     @IBOutlet weak var mDescription: SkyFloatingLabelTextField!
     @IBOutlet weak var mSaveView: UIView!
     @IBOutlet weak var mAddProductView: UIView!
+    @IBOutlet weak var mSaveActivityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,16 @@ class PartnerViewController: UIViewController {
         mSaveView.themeSaveBtn()
         mAddProductView.themeSaveBtn()
         mUserImg.makeRounded()
+        
+        mFirstName.delegate = self
+        mLastName.delegate = self
+        mPhone.delegate = self
+        mAddress.delegate = self
+        mSuite.delegate = self
+        mCity.delegate = self
+        mState.delegate = self
+        mZipcode.delegate = self
+        mDescription.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -60,7 +71,7 @@ class PartnerViewController: UIViewController {
         JCUIImagePickerManager.sharedInstance.pickImageFrom(allowsEditing: true, sourceType: .photoLibrary, target: self) { (info, error) in
             print("Image Callback.....")
             if error == nil {
-                let img = info?[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage;
+                let img = info?[.editedImage] as? UIImage;
                 print("Image Selected : \(img?.description)")
                 self.mUserImg.image = img
             } else {
@@ -80,4 +91,11 @@ class PartnerViewController: UIViewController {
         
     }
     
+}
+
+extension PartnerViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 }

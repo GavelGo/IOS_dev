@@ -31,6 +31,7 @@ class ConsumerViewController: UIViewController {
     @IBOutlet weak var mBtnSave: UIButton!
     @IBOutlet weak var mCancelBtnView: UIView!
     @IBOutlet weak var mBtnCancel: UIButton!
+    @IBOutlet weak var mSaveActivityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,16 @@ class ConsumerViewController: UIViewController {
         mSaveBtnView.themeSaveBtn()
         mCancelBtnView.themeSaveBtn()
         mUserImage.makeRounded()
+        
+        mFirstName.delegate = self
+        mLastName.delegate = self
+        mPhone.delegate = self
+        mAddress.delegate = self
+        mSuit.delegate = self
+        mCity.delegate = self
+        mState.delegate = self
+        mZipcode.delegate = self
+        mDescription.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -67,7 +78,7 @@ class ConsumerViewController: UIViewController {
         
         JCUIImagePickerManager.sharedInstance.pickImageFrom(allowsEditing: true, sourceType: .photoLibrary, target: self) { (info, error) in
             if error == nil {
-                let img = info?[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage;
+                let img = info?[.editedImage] as? UIImage;
                 self.mUserImage.image = img
             }
         }
@@ -75,10 +86,20 @@ class ConsumerViewController: UIViewController {
     }
     
     @IBAction func saveBtnAction(_ sender: Any) {
+        
+        
+        
     }
     
     @IBAction func cancelBtnAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
+}
+
+extension ConsumerViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 //MARK: - BlockDefination -
-typealias JCUIImagePickerControllerBlock = ([String : Any]?, Error?) -> Void
+typealias JCUIImagePickerControllerBlock = ([UIImagePickerController.InfoKey : Any]?, Error?) -> Void
 
 class JCUIImagePickerManager: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     //MARK: - SharedInstance -
@@ -118,12 +118,13 @@ class JCUIImagePickerManager: NSObject, UINavigationControllerDelegate, UIImageP
         }
     }
     //MARK: - UIImagePickerControllerDelegate -
-    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        print("ImagePicker CallBack : \(info)")
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         self.complitionHandler!(info, nil);
         picker.dismiss(animated: true, completion: nil);
         self.complitionHandler = nil;
     }
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         let error: NSError = NSError.init(domain: "UIImagePickerController is canceled by user", code: -2, userInfo: nil)
         self.complitionHandler!(nil, error);
