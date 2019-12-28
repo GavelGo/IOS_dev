@@ -8,7 +8,7 @@
 
 import UIKit
 import SkyFloatingLabelTextField
-import Toaster
+import Toast_Swift
 
 class ViewController: UIViewController {
 
@@ -45,8 +45,10 @@ class ViewController: UIViewController {
         let userName = mEmail.text?.trimmingCharacters(in: .whitespaces) ?? ""
         let password = mPassword.text?.trimmingCharacters(in: .whitespaces) ?? ""
         
+        //changeRootViewController()
+        
         if userName.isEmpty {
-            mEmail.errorMessage = "Please Enter UserName"
+            mEmail.errorMessage = "Please Enter Email"
             return
         } else {
             mEmail.errorMessage = ""
@@ -57,7 +59,7 @@ class ViewController: UIViewController {
         } else {
             mPassword.errorMessage = ""
         }
-        
+
         authentication(userName: userName, password: password)
     }
     
@@ -70,45 +72,59 @@ class ViewController: UIViewController {
     
     func authentication(userName: String, password: String) {
         
+        self.view.endEditing(true)
         mSignInBtn.isHidden = true
         mSignInIndicator.isHidden = false
         mSignInIndicator.startAnimating()
         
-        let header = NSMutableDictionary.init(dictionary: ["Content-Type" : "application/json"])
+        let params = ["username":userName,
+                      "password":password]
         
-        let params = NSMutableDictionary.init()
-        params.addEntries(from: ["username" : userName,
-                                 "password" : password])
+        WebService.sharedObject().callWebservice(urlString: APIs.POST_AUTH, method: .post, dicParameters: params, allowHud: false) { (response, error) in
+            
+            guard let data = response else { return }
+            do {
+                let decoder = JSONDecoder()
+                let dictionary = data as! NSDictionary
+                let jsonData: NSData = try JSONSerialization.data(withJSONObject: dictionary, options: JSONSerialization.WritingOptions.prettyPrinted) as NSData
+                if error == nil {
+                    let resData = try decoder.decode(APIResponseStruct.self, from: jsonData as Data)
+                    self.navigationController?.view.makeToast("Error : \(resData.status)")
+                }
+               } catch let err {
+                print("Err", err)
+                let dicResponse: NSDictionary = response as! NSDictionary
+                let token = dicResponse.object(forKey: "token") as! String
+                self.login(token: token, userName: userName, password: password)
+            }
+            
+        }
         
-        WebService.sharedObject().callWebservice(urlString: APIs.LOGIN, method: .post, dicHeader: header, dicParameters: params, allowHud: false) { (response, error) in
+    }
+    
+    func login(token: String, userName: String, password: String) {
+        
+        let params = ["username" : userName,
+                      "Authorization" : token,
+                      "password" : password]
+        
+        WebService.sharedObject().callWebservice(urlString: APIs.POST_LOGIN, method: .post, dicParameters: params, allowHud: false) { (response, error) in
             
             self.mSignInIndicator.stopAnimating()
             self.mSignInIndicator.isHidden = true
             self.mSignInBtn.isHidden = false
             
+            self.changeRootViewController()
+            
             guard let data = response else { return }
-               do {
-                
+            do {
                 let decoder = JSONDecoder()
-                
-                //let jsonString = "{\"error\": \"Bad Request\", \"message\": \"Message\", \"path\": \"/authenticate\", \"status\": 400, \"timestamp\": \"2019-12-25T18:27:51.453+0000\"}"
                 let dictionary = data as! NSDictionary
-                
                 let jsonData: NSData = try JSONSerialization.data(withJSONObject: dictionary, options: JSONSerialization.WritingOptions.prettyPrinted) as NSData
                 if error == nil {
-                    
                     let resData = try decoder.decode(APIResponseStruct.self, from: jsonData as Data)
-                    print(resData.status)
-                    
-                    if resData.status == 200 {
-                        self.changeRootViewController()
-                    } else {
-                        ToastView.appearance().backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.7647058824, blue: 0.6509803922, alpha: 1)
-                        Toast(text: "Error Code : \(resData.status)").show()
-                    }
-                    
+                    self.navigationController?.view.makeToast("Error : \(resData.status)")
                 }
-                
                } catch let err {
                 print("Err", err)
             }

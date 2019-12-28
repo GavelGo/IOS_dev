@@ -20,6 +20,7 @@
 		3DD57BEF23B14D3100819C4A /* ConsumerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */; };
 		3DD57BF123B155E000819C4A /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BF023B155E000819C4A /* HomeNavigationController.swift */; };
 		3DD57BF323B15C7900819C4A /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BF223B15C7900819C4A /* ProductInfoViewController.swift */; };
+		3DDCCB5F23B7CB0600E55E70 /* StructSubCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDCCB5E23B7CB0600E55E70 /* StructSubCategories.swift */; };
 		3DF3D34223B5188900F3C708 /* PartnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3D34123B5188900F3C708 /* PartnerViewController.swift */; };
 		3DF3D34423B51C9000F3C708 /* JCUIImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3D34323B51C9000F3C708 /* JCUIImagePickerManager.swift */; };
 		3DF3D34623B5520300F3C708 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3D34523B5520300F3C708 /* AddProductViewController.swift */; };
@@ -53,6 +54,7 @@
 		3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerViewController.swift; sourceTree = "<group>"; };
 		3DD57BF023B155E000819C4A /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		3DD57BF223B15C7900819C4A /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
+		3DDCCB5E23B7CB0600E55E70 /* StructSubCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructSubCategories.swift; sourceTree = "<group>"; };
 		3DF3D34123B5188900F3C708 /* PartnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerViewController.swift; sourceTree = "<group>"; };
 		3DF3D34323B51C9000F3C708 /* JCUIImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCUIImagePickerManager.swift; sourceTree = "<group>"; };
 		3DF3D34523B5520300F3C708 /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				3DFBC0CD23AF8420003EF278 /* HomeStruct.swift */,
 				3D151B8323B3C9A7000395C9 /* APIResponseStruct.swift */,
 				3DF3D34723B553DC00F3C708 /* StructCategories.swift */,
+				3DDCCB5E23B7CB0600E55E70 /* StructSubCategories.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -332,22 +335,28 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GavelGo/Pods-GavelGo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FaveButton/FaveButton.framework",
+				"${BUILT_PRODUCTS_DIR}/FloatRatingView/FloatRatingView.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FaveButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FloatRatingView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -362,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DF3D34623B5520300F3C708 /* AddProductViewController.swift in Sources */,
+				3DDCCB5F23B7CB0600E55E70 /* StructSubCategories.swift in Sources */,
 				3D151B7F23B3C025000395C9 /* ForgotPasswordViewController.swift in Sources */,
 				3DFBC0C023AF78D7003EF278 /* NotificationViewController.swift in Sources */,
 				3D8F593823AF2D6E00FA5A67 /* ViewController.swift in Sources */,

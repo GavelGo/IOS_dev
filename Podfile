@@ -12,6 +12,10 @@ target 'GavelGo' do
   pod 'SDWebImage', '~> 5.0'
   pod 'Alamofire', '~> 4.9.0'
   pod 'SVProgressHUD'
-  pod 'Toaster'
+  pod 'Toast-Swift', '~> 5.0.1'
+  pod 'ImageSlideshow', '~> 1.8.1'
+  pod "ImageSlideshow/SDWebImage"
+  pod 'FloatRatingView', '~> 4'
+  pod 'FaveButton'
 
 end

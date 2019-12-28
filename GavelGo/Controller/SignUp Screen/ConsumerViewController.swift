@@ -53,6 +53,9 @@ class ConsumerViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
+        mBtnSave.isHidden = false
+        mSaveActivityIndicator.isHidden = true
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -87,7 +90,8 @@ class ConsumerViewController: UIViewController {
     
     @IBAction func saveBtnAction(_ sender: Any) {
         
-        
+        mBtnSave.isHidden = false
+        mSaveActivityIndicator.isHidden = true
         
     }
     

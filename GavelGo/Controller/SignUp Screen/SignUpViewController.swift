@@ -8,7 +8,7 @@
 
 import UIKit
 import SkyFloatingLabelTextField
-import Toaster
+import Toast_Swift
 
 class SignUpViewController: UIViewController {
     
@@ -94,6 +94,9 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpAction(_ sender: Any) {
         
+        let vc = storyboard?.instantiateViewController(withIdentifier: "PartnerViewController") as! PartnerViewController
+        navigationController?.pushViewController(vc, animated: true)
+        
         let userName = mUserName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let email = mEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = mPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -137,10 +140,8 @@ class SignUpViewController: UIViewController {
             navigationController?.pushViewController(vc, animated: true)
         } else {
             print("UserType Empty...")
+            self.navigationController?.view.makeToast("Please Select User Type")
         }
-        
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "PartnerViewController") as! PartnerViewController
-//        navigationController?.pushViewController(vc, animated: true)
         
     }
     
@@ -153,14 +154,11 @@ class SignUpViewController: UIViewController {
         self.mSignInActivityIndicator.isHidden = false
         self.mSignInActivityIndicator.startAnimating()
         
-        let header = NSMutableDictionary.init(dictionary: ["Content-Type" : "application/json"])
+        let params = ["username" : userName,
+                      "email" : email,
+                      "password" : password]
         
-        let params = NSMutableDictionary.init()
-        params.addEntries(from: ["username" : userName,
-                                 "email" : email,
-                                 "password" : password])
-        
-        WebService.sharedObject().callWebservice(urlString: APIs.REGISTER, method: .post, dicHeader: header, dicParameters: params, allowHud: false) { (response, error) in
+        WebService.sharedObject().callWebservice(urlString: APIs.POST_REGISTER_NEW_USER, method: .post, dicParameters: params, allowHud: false) { (response, error) in
             self.mSignInActivityIndicator.stopAnimating()
             self.mSignInActivityIndicator.isHidden = true
             

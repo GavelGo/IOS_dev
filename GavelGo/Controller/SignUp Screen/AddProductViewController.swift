@@ -30,6 +30,9 @@ class AddProductViewController: UIViewController {
     var subCategoryPicker: UIPickerView!
     
     var mCategories = [StructCategories]()
+    var mSelectedCat: StructCategories!
+    var mSubCategories = [StructSubCategories]()
+    var mSelectedSubCat: StructSubCategories!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,13 +67,29 @@ class AddProductViewController: UIViewController {
 
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
-
+        
         categoryPicker = UIPickerView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 150))
         categoryPicker.backgroundColor = .white
         categoryPicker.tag = 1
         
         categoryPicker.delegate = self
         categoryPicker.dataSource = self
+        
+        mSelectCategoryTf.inputView = categoryPicker
+        mSelectCategoryTf.inputAccessoryView = toolBar
+        
+        let toolBar1 = UIToolbar()
+        toolBar1.barStyle = .default
+        toolBar1.isTranslucent = true
+        toolBar1.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar1.sizeToFit()
+
+        let doneButton1 = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.pickerDoneButtonActionForSubCate))
+        let spaceButton1 = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton1 = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.pickercancelClickForSubCate))
+
+        toolBar1.setItems([cancelButton1, spaceButton1, doneButton1], animated: false)
+        toolBar1.isUserInteractionEnabled = true
         
         subCategoryPicker = UIPickerView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 150))
         subCategoryPicker.backgroundColor = .white
@@ -79,14 +98,22 @@ class AddProductViewController: UIViewController {
         subCategoryPicker.delegate = self
         subCategoryPicker.dataSource = self
         
-        mSelectCategoryTf.inputView = categoryPicker
-        mSelectCategoryTf.inputAccessoryView = toolBar
-     
+        mSelectSubCategoryTf.inputView = subCategoryPicker
+        mSelectSubCategoryTf.inputAccessoryView = toolBar1
+        
+        mSaveBtn.isHidden = false
+        mSaveAvtivityIndicator.isHidden = true
+        
         self.getCategories()
+        self.getSubCategories()
         
     }
     
     @objc func pickerDoneButtonAction(){
+        if mSelectedCat == nil {
+            self.mSelectCategoryTf.text = self.mCategories[0].categoryName
+            self.mSelectedCat = self.mCategories[0]
+        }
         mSelectCategoryTf.resignFirstResponder()
     }
     
@@ -94,30 +121,52 @@ class AddProductViewController: UIViewController {
         mSelectCategoryTf.resignFirstResponder()
     }
     
+    @objc func pickerDoneButtonActionForSubCate(){
+        if mSelectedSubCat == nil {
+            self.mSelectSubCategoryTf.text = self.mSubCategories[0].subCategoryName
+            self.mSelectedSubCat = self.mSubCategories[0]
+        }
+        mSelectSubCategoryTf.resignFirstResponder()
+    }
+    
+    @objc func pickercancelClickForSubCate(){
+        mSelectSubCategoryTf.resignFirstResponder()
+    }
+    
     func getCategories() {
-        
-        let header = NSMutableDictionary.init(dictionary: ["Content-Type" : "application/json"])
-        WebService.sharedObject().callWebservice(urlString: APIs.CATEGORY, method: .get, dicHeader: header, dicParameters: [:], allowHud: false) { (response, error) in
-            
+        self.mSelectCategoryTf.isEnabled = false
+        WebService.sharedObject().callWebservice(urlString: APIs.GET_CATEGORY, method: .get, dicParameters: [:], allowHud: false) { (response, error) in
             guard let data = response else { return }
                do {
-                
                 let decoder = JSONDecoder()
                 let dictionary = data as! [NSDictionary]
-                
                 let jsonData: NSData = try JSONSerialization.data(withJSONObject: dictionary, options: JSONSerialization.WritingOptions.prettyPrinted) as NSData
                 if error == nil {
-                    
+                    self.mSelectCategoryTf.isEnabled = true
                     self.mCategories = try decoder.decode([StructCategories].self, from: jsonData as Data)
-                    
                 }
-                
                } catch let err {
                 print("Err", err)
             }
-            
         }
-        
+    }
+    
+    func getSubCategories() {
+        self.mSelectSubCategoryTf.isEnabled = false
+        WebService.sharedObject().callWebservice(urlString: APIs.GET_SUB_CATEGORY, method: .get, dicParameters: [:], allowHud: false) { (response, error) in
+            guard let data = response else { return }
+               do {
+                let decoder = JSONDecoder()
+                let dictionary = data as! [NSDictionary]
+                let jsonData: NSData = try JSONSerialization.data(withJSONObject: dictionary, options: JSONSerialization.WritingOptions.prettyPrinted) as NSData
+                if error == nil {
+                    self.mSelectSubCategoryTf.isEnabled = true
+                    self.mSubCategories = try decoder.decode([StructSubCategories].self, from: jsonData as Data)
+                }
+               } catch let err {
+                print("Err", err)
+            }
+        }
     }
     
     @IBAction func browseImgAction(_ sender: UIButton) {
@@ -151,9 +200,14 @@ class AddProductViewController: UIViewController {
     }
     
     @IBAction func saveProductAction(_ sender: Any) {
+        
+        mSaveBtn.isHidden = false
+        mSaveAvtivityIndicator.isHidden = true
+        
     }
     
     @IBAction func cancelBtnAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
 }
@@ -163,6 +217,8 @@ extension AddProductViewController: UIPickerViewDelegate, UIPickerViewDataSource
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView.tag == 1 {
             return mCategories[row].categoryName
+        } else if pickerView.tag == 2 {
+            return mSubCategories[row].subCategoryName
         }
         return ""
     }
@@ -174,13 +230,23 @@ extension AddProductViewController: UIPickerViewDelegate, UIPickerViewDataSource
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView.tag == 1 {
             return mCategories.count
+        } else if pickerView.tag == 2 {
+            return mSubCategories.count
         }
         return 0
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 1 {
-            self.mSelectCategoryTf.text = self.mCategories[row].categoryName
+            if !mCategories.isEmpty {
+                self.mSelectCategoryTf.text = self.mCategories[row].categoryName
+                self.mSelectedCat = self.mCategories[row]
+            }
+        } else if pickerView.tag == 2 {
+            if !mSubCategories.isEmpty {
+                self.mSelectSubCategoryTf.text = self.mSubCategories[row].subCategoryName
+                self.mSelectedSubCat = self.mSubCategories[row]
+            }
         }
     }
     

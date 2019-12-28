@@ -1,5 +1,13 @@
 PODS:
   - Alamofire (4.9.1)
+  - FaveButton (3.2.1)
+  - FloatRatingView (4.0)
+  - ImageSlideshow (1.8.1):
+    - ImageSlideshow/Core (= 1.8.1)
+  - ImageSlideshow/Core (1.8.1)
+  - ImageSlideshow/SDWebImage (1.8.1):
+    - ImageSlideshow/Core
+    - SDWebImage (>= 3.7)
   - MaterialComponents/AnimationTiming (98.0.0)
   - MaterialComponents/Cards (98.0.0):
     - MaterialComponents/Elevation
@@ -36,34 +44,44 @@ PODS:
   - SDWebImage/Core (5.4.0)
   - SkyFloatingLabelTextField (3.8.0)
   - SVProgressHUD (2.2.5)
-  - Toaster (2.2.0)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.9.0)
+  - FaveButton
+  - FloatRatingView (~> 4)
+  - ImageSlideshow (~> 1.8.1)
+  - ImageSlideshow/SDWebImage
   - MaterialComponents/Cards
   - MaterialComponents/Ripple
   - SDWebImage (~> 5.0)
   - SkyFloatingLabelTextField (~> 3.0)
   - SVProgressHUD
-  - Toaster
+  - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - FaveButton
+    - FloatRatingView
+    - ImageSlideshow
     - MaterialComponents
     - SDWebImage
     - SkyFloatingLabelTextField
     - SVProgressHUD
-    - Toaster
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  FaveButton: 93cfebf6030336fa7653fad2068c3152ed668b39
+  FloatRatingView: bb6bdddfbeec51b1d387b4bd50abc27b4dfccd48
+  ImageSlideshow: 634865d7d4e96f21e3830a31b51bde768cc94cea
   MaterialComponents: 2a8b6fb1bf6655d3e2254dadae5edbb05559e1d7
   SDWebImage: 5bf6aec6481ae2a062bdc59f9d6c1d1e552090e0
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: d741e3ed2fd045f5b2060620669ef6fb44f7685c
+PODFILE CHECKSUM: 351cfe9617fad9788c6b12dd13980ba6cab5e417
 
 COCOAPODS: 1.5.3

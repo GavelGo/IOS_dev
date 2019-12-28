@@ -22,11 +22,10 @@ class WebService {
         return shared!;
     }
     
-    func callWebservice(urlString: String, method: HTTPMethod, dicHeader: NSDictionary?, dicParameters: NSDictionary?, allowHud: Bool, complition: @escaping (_ response: Any?, _ err: Error?) -> Void)  {
+    func callWebservice(urlString: String, method: HTTPMethod, dicParameters: [String: Any], allowHud: Bool, complition: @escaping (_ response: Any?, _ err: Error?) -> Void)  {
         if self.allowedAPILogs {
             print("URL : ", urlString);
-            print("Header : ", dicHeader!);
-            print("Parameters : ", dicParameters!);
+            print("Parameters : ", dicParameters);
         }
         if self.internetAvaibility() == false {
             let error = NSError.init(domain: "com.internet", code: -1992, userInfo: [
@@ -40,7 +39,7 @@ class WebService {
             self.showHUD();
         }
         UIApplication.shared.isNetworkActivityIndicatorVisible = true;
-        let request = Alamofire.request(urlString, method: method, parameters: dicParameters as? [String: String], encoding: URLEncoding.default, headers: dicHeader as? [String: String]).responseJSON {
+        let request = Alamofire.request(urlString, method: method, parameters: dicParameters, encoding: JSONEncoding.default, headers: ["Content-Type" : "application/json"]).responseJSON {
             (dataResponse) in
 
             if allowHud {
