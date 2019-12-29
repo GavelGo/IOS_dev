@@ -20,6 +20,7 @@
 		3DD57BEF23B14D3100819C4A /* ConsumerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */; };
 		3DD57BF123B155E000819C4A /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BF023B155E000819C4A /* HomeNavigationController.swift */; };
 		3DD57BF323B15C7900819C4A /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BF223B15C7900819C4A /* ProductInfoViewController.swift */; };
+		3DDB92E423B8AA6200333E82 /* StructProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB92E323B8AA6200333E82 /* StructProduct.swift */; };
 		3DDCCB5F23B7CB0600E55E70 /* StructSubCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDCCB5E23B7CB0600E55E70 /* StructSubCategories.swift */; };
 		3DF3D34223B5188900F3C708 /* PartnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3D34123B5188900F3C708 /* PartnerViewController.swift */; };
 		3DF3D34423B51C9000F3C708 /* JCUIImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3D34323B51C9000F3C708 /* JCUIImagePickerManager.swift */; };
@@ -54,6 +55,7 @@
 		3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerViewController.swift; sourceTree = "<group>"; };
 		3DD57BF023B155E000819C4A /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		3DD57BF223B15C7900819C4A /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
+		3DDB92E323B8AA6200333E82 /* StructProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructProduct.swift; sourceTree = "<group>"; };
 		3DDCCB5E23B7CB0600E55E70 /* StructSubCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructSubCategories.swift; sourceTree = "<group>"; };
 		3DF3D34123B5188900F3C708 /* PartnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerViewController.swift; sourceTree = "<group>"; };
 		3DF3D34323B51C9000F3C708 /* JCUIImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCUIImagePickerManager.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				3D151B8323B3C9A7000395C9 /* APIResponseStruct.swift */,
 				3DF3D34723B553DC00F3C708 /* StructCategories.swift */,
 				3DDCCB5E23B7CB0600E55E70 /* StructSubCategories.swift */,
+				3DDB92E323B8AA6200333E82 /* StructProduct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				3DFBC0C923AF7C48003EF278 /* Utils.swift in Sources */,
 				3D151B8223B3C205000395C9 /* WebService.swift in Sources */,
 				3DF9153423B3D26200F28F52 /* APIs.swift in Sources */,
+				3DDB92E423B8AA6200333E82 /* StructProduct.swift in Sources */,
 				3DD57BF323B15C7900819C4A /* ProductInfoViewController.swift in Sources */,
 				3DFBC0C423AF78F9003EF278 /* SettingsViewController.swift in Sources */,
 				3DF3D34423B51C9000F3C708 /* JCUIImagePickerManager.swift in Sources */,

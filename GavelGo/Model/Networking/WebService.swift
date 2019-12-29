@@ -22,7 +22,7 @@ class WebService {
         return shared!;
     }
     
-    func callWebservice(urlString: String, method: HTTPMethod, dicParameters: [String: Any], allowHud: Bool, complition: @escaping (_ response: Any?, _ err: Error?) -> Void)  {
+    func callWebservice(urlString: String, method: HTTPMethod, dicParameters: NSDictionary?, allowHud: Bool, complition: @escaping (_ response: Any?, _ err: Error?) -> Void)  {
         if self.allowedAPILogs {
             print("URL : ", urlString);
             print("Parameters : ", dicParameters);
@@ -35,11 +35,18 @@ class WebService {
             return;
         }
         
+        let header = NSMutableDictionary.init()
+        if method == .get {
+            
+        } else {
+            header.addEntries(from: ["Content-Type" : "application/json"])
+        }
+        
         if allowHud {
             self.showHUD();
         }
         UIApplication.shared.isNetworkActivityIndicatorVisible = true;
-        let request = Alamofire.request(urlString, method: method, parameters: dicParameters, encoding: JSONEncoding.default, headers: ["Content-Type" : "application/json"]).responseJSON {
+        let request = Alamofire.request(urlString, method: method, parameters: dicParameters as? Parameters, encoding: JSONEncoding.default, headers: (header as! HTTPHeaders)).responseJSON {
             (dataResponse) in
 
             if allowHud {

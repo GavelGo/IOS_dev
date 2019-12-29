@@ -908,6 +908,7 @@
                         <outlet property="mLastName" destination="UPV-Pp-12g" id="kOx-Fg-bGx"/>
                         <outlet property="mPhone" destination="e0D-uW-16h" id="DcA-LJ-Nno"/>
                         <outlet property="mSaveActivityIndicator" destination="VYE-uc-jeu" id="9gx-DU-PSw"/>
+                        <outlet property="mSaveBtn" destination="RFB-j8-zNw" id="Ckk-nt-Y9m"/>
                         <outlet property="mSaveView" destination="AYp-Ye-9qR" id="WSU-1X-fsc"/>
                         <outlet property="mState" destination="DW1-n2-kro" id="AE7-gZ-9cw"/>
                         <outlet property="mSuite" destination="05g-XA-vjZ" id="mXu-lv-z99"/>

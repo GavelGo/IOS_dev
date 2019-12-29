@@ -34,6 +34,8 @@ class AddProductViewController: UIViewController {
     var mSubCategories = [StructSubCategories]()
     var mSelectedSubCat: StructSubCategories!
     
+    var signUpValues: StructSignUpValues!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -135,7 +137,7 @@ class AddProductViewController: UIViewController {
     
     func getCategories() {
         self.mSelectCategoryTf.isEnabled = false
-        WebService.sharedObject().callWebservice(urlString: APIs.GET_CATEGORY, method: .get, dicParameters: [:], allowHud: false) { (response, error) in
+        WebService.sharedObject().callWebservice(urlString: APIs.GET_CATEGORY, method: .get, dicParameters: nil, allowHud: false) { (response, error) in
             guard let data = response else { return }
                do {
                 let decoder = JSONDecoder()
@@ -153,7 +155,7 @@ class AddProductViewController: UIViewController {
     
     func getSubCategories() {
         self.mSelectSubCategoryTf.isEnabled = false
-        WebService.sharedObject().callWebservice(urlString: APIs.GET_SUB_CATEGORY, method: .get, dicParameters: [:], allowHud: false) { (response, error) in
+        WebService.sharedObject().callWebservice(urlString: APIs.GET_SUB_CATEGORY, method: .get, dicParameters: nil, allowHud: false) { (response, error) in
             guard let data = response else { return }
                do {
                 let decoder = JSONDecoder()
@@ -200,14 +202,22 @@ class AddProductViewController: UIViewController {
     }
     
     @IBAction func saveProductAction(_ sender: Any) {
-        
-        mSaveBtn.isHidden = false
-        mSaveAvtivityIndicator.isHidden = true
-        
+        addProduct()
     }
     
     @IBAction func cancelBtnAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func addProduct() {
+        
+        mSaveBtn.isHidden = false
+        mSaveAvtivityIndicator.isHidden = true
+        let params = NSMutableDictionary.init()
+        WebService.sharedObject().callWebservice(urlString: APIs.POST_ADD_PRODUCT, method: .post, dicParameters: params, allowHud: false) { (response, error) in
+            
+        }
+        
     }
     
 }

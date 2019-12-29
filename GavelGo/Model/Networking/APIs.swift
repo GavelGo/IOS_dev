@@ -26,6 +26,7 @@ class APIs {
     //MARK: POST METHODS
     static let POST_AUTH = APIs.BASE_URL + "authenticate" //To get token
     static let POST_REGISTER_NEW_USER = APIs.BASE_URL + "register" //username,password
+    static let POST_REGISTER_NEW_PARTNER = APIs.BASE_URL + "regPartner" //username,password
     static let POST_LOGIN = APIs.BASE_URL + "login" //username,password
     static let POST_ADD_ROLE = APIs.BASE_URL + "role" //"roleName":"SITE_PARTNER","description":"SITE PARTNER"
     static let POST_ADD_PRODUCT = APIs.BASE_URL + "product" //categoryId, categoryName, title, description, subCategoryId, subCategoryName, productOwner, userName

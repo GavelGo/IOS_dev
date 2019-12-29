@@ -33,6 +33,8 @@ class ConsumerViewController: UIViewController {
     @IBOutlet weak var mBtnCancel: UIButton!
     @IBOutlet weak var mSaveActivityIndicator: UIActivityIndicatorView!
     
+    var signUpValues: StructSignUpValues!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

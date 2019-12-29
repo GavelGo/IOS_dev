@@ -10,6 +10,27 @@ import UIKit
 import SkyFloatingLabelTextField
 import Toast_Swift
 
+struct StructSignUpValues {
+    var userName: String = ""
+    var email: String = ""
+    var password: String = ""
+    var userType: enumSignUpuserType? = nil
+    var fName: String = ""
+    var lName: String = ""
+    var phone: String = ""
+    var address: String = ""
+    var suite: String = ""
+    var city: String = ""
+    var state: String = ""
+    var zipcode: String = ""
+    var description: String = ""
+}
+
+enum enumSignUpuserType {
+    case CONSUMER
+    case PARTNER
+}
+
 class SignUpViewController: UIViewController {
     
     @IBOutlet weak var mUserName: SkyFloatingLabelTextField!
@@ -94,8 +115,10 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpAction(_ sender: Any) {
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "PartnerViewController") as! PartnerViewController
-        navigationController?.pushViewController(vc, animated: true)
+        self.view.endEditing(true)
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PartnerViewController") as! PartnerViewController
+        self.navigationController?.pushViewController(vc, animated: true)
         
         let userName = mUserName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let email = mEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -131,16 +154,16 @@ class SignUpViewController: UIViewController {
             mConfirmPassword.errorMessage = ""
             
         }
-
         let userType = mUserTypetf.text
-        if userType == "Consumer" {
-            registerConsumerUser(userName: userName!, email: email!, password: password!)
-        } else if userType == "Partner" {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "PartnerViewController") as! PartnerViewController
-            navigationController?.pushViewController(vc, animated: true)
-        } else {
-            print("UserType Empty...")
+        if userType!.isEmpty {
             self.navigationController?.view.makeToast("Please Select User Type")
+            return
+        }
+        
+        if userType == "Consumer" {
+            registerConsumerUser(url: APIs.POST_REGISTER_NEW_USER, userName: userName!, email: email!, password: password!)
+        } else if userType == "Partner" {
+            registerConsumerUser(url: APIs.POST_REGISTER_NEW_PARTNER, userName: userName!, email: email!, password: password!)
         }
         
     }
@@ -149,21 +172,62 @@ class SignUpViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    func registerConsumerUser(userName: String, email: String, password: String) {
+    func registerConsumerUser(url: String, userName: String, email: String, password: String) {
         
         self.mSignInActivityIndicator.isHidden = false
         self.mSignInActivityIndicator.startAnimating()
         
-        let params = ["username" : userName,
-                      "email" : email,
-                      "password" : password]
+        let params = NSMutableDictionary.init()
+        params.addEntries(from: ["username" : userName,
+                                 "email" : email,
+                                 "password" : password])
         
-        WebService.sharedObject().callWebservice(urlString: APIs.POST_REGISTER_NEW_USER, method: .post, dicParameters: params, allowHud: false) { (response, error) in
+        WebService.sharedObject().callWebservice(urlString: url, method: .post, dicParameters: params, allowHud: false) { (response, error) in
             self.mSignInActivityIndicator.stopAnimating()
             self.mSignInActivityIndicator.isHidden = true
             
-//            let vc = storyboard?.instantiateViewController(withIdentifier: "ConsumerViewController") as! ConsumerViewController
-//            navigationController?.pushViewController(vc, animated: true)
+            guard let data = response else { return }
+            do {
+                let decoder = JSONDecoder()
+                let dictionary = data as! NSDictionary
+                let jsonData: NSData = try JSONSerialization.data(withJSONObject: dictionary, options: JSONSerialization.WritingOptions.prettyPrinted) as NSData
+                if error == nil {
+                    let resData = try decoder.decode(APIResponseStruct.self, from: jsonData as Data)
+                    self.navigationController?.view.makeToast("Error : \(resData.status)")
+                }
+               } catch let err {
+                print("Err", err)
+                
+                let dicResponse: NSDictionary = response as! NSDictionary
+                let status = dicResponse.object(forKey: "status") as! String
+                let user = dicResponse.object(forKey: "user") as! String
+                self.navigationController?.view.makeToast(status)
+                let userType = self.mUserTypetf.text
+                
+                var values = StructSignUpValues()
+                values.userName = userName
+                values.email = email
+                values.password = password
+                
+                if userType == "Consumer" {
+                    
+                    values.userType = .CONSUMER
+                    
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "ConsumerViewController") as! ConsumerViewController
+                    vc.signUpValues = values
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    
+                } else if userType == "Partner" {
+                    
+                    values.userType = .PARTNER
+                    
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "PartnerViewController") as! PartnerViewController
+                    vc.signUpValues = values
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    
+                }
+                
+            }
             
         }
         

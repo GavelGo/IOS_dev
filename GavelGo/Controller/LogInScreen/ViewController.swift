@@ -77,8 +77,9 @@ class ViewController: UIViewController {
         mSignInIndicator.isHidden = false
         mSignInIndicator.startAnimating()
         
-        let params = ["username":userName,
-                      "password":password]
+        let params = NSMutableDictionary.init()
+        params.addEntries(from: ["username":userName,
+                                 "password":password])
         
         WebService.sharedObject().callWebservice(urlString: APIs.POST_AUTH, method: .post, dicParameters: params, allowHud: false) { (response, error) in
             
@@ -104,9 +105,10 @@ class ViewController: UIViewController {
     
     func login(token: String, userName: String, password: String) {
         
-        let params = ["username" : userName,
-                      "Authorization" : token,
-                      "password" : password]
+        let params = NSMutableDictionary.init()
+        params.addEntries(from: ["username" : userName,
+                                 "Authorization" : token,
+                                 "password" : password])
         
         WebService.sharedObject().callWebservice(urlString: APIs.POST_LOGIN, method: .post, dicParameters: params, allowHud: false) { (response, error) in
             

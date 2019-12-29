@@ -8,6 +8,8 @@
 
 import UIKit
 import SDWebImage
+import CoreLocation
+import Toast_Swift
 
 class HomeViewController: UIViewController {
 
@@ -16,98 +18,15 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var mCollectionView: UICollectionView!
     
-    var mData = [HomeStruct]()
-    let imgUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTyNIYwGb2IPP06Rff8doyAD-rXBFBEWB26lgpN8LCIPPXWyQer"
+    var mData = [StructProduct]()
+    var locationManager: CLLocationManager = CLLocationManager.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.isHidden = true
-        
         mSearchView.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
         mSearchView.layer.borderWidth = 0.5
         mSearchView.layer.cornerRadius = 3
-        
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
-        mData.append(HomeStruct(img: imgUrl, price: "$25", name: "Oil change", cat: "Panda oil"))
         
         mCollectionView.delegate = self
         mCollectionView.dataSource = self
@@ -135,8 +54,48 @@ class HomeViewController: UIViewController {
         layout.minimumInteritemSpacing = 1.0
         mCollectionView.setCollectionViewLayout(layout, animated: true)
 
-        mCollectionView.reloadData()
+        getProducts()
+        requestLocationService()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    func requestLocationService() {
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        } else {
+            self.navigationController?.view.makeToast("Please Enable Location Service")
+        }
+    }
+    
+    func getProducts() {
+        
+        WebService.sharedObject().callWebservice(urlString: APIs.GET_PRODUCT, method: .get, dicParameters: nil, allowHud: false) { (response, error) in
+            
+            guard let data = response else { return }
+            do {
+                let decoder = JSONDecoder()
+                let dictionary = data as! [NSDictionary]
+                let jsonData: NSData = try JSONSerialization.data(withJSONObject: dictionary, options: JSONSerialization.WritingOptions.prettyPrinted) as NSData
+                if error == nil {
+                    self.mData = try decoder.decode([StructProduct].self, from: jsonData as Data)
+                    self.mCollectionView.reloadData()
+                } else {
+                    //let resData = try decoder.decode(APIResponseStruct.self, from: jsonData as Data)
+                    print("Error : \(error)")
+                    self.navigationController?.view.makeToast("Something Wrong!!")
+                }
+               } catch let err {
+                print("Err", err)
+            }
+            
+        }
         
     }
     
@@ -174,10 +133,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         let data = mData[indexPath.item]
         
-        cell.mImageView.sd_setImage(with: URL(string: data.img), completed: nil)
-        cell.mPrice.text = data.price
-        cell.mName.text = data.name
-        cell.mCategory.text = data.cat
+        //cell.mImageView.sd_setImage(with: URL(string: data.img), completed: nil)
+        let price: Int = data.price!
+        cell.mPrice.text = "$ \(String(describing: price))"
+        cell.mName.text = data.title
+        cell.mCategory.text = data.categoryName
         
         return cell
         
@@ -192,4 +152,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
     }
     
+}
+
+extension HomeViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        var locValue : CLLocationCoordinate2D = manager.location!.coordinate;
+        let long = locValue.longitude;
+        let lat = locValue.latitude;
+        print("Lat : \(lat), Long : \(long)")
+        let loadlocation = CLLocationCoordinate2D(latitude: lat, longitude: long)
+    }
 }
