@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         let userName = mEmail.text?.trimmingCharacters(in: .whitespaces) ?? ""
         let password = mPassword.text?.trimmingCharacters(in: .whitespaces) ?? ""
         
-        //changeRootViewController()
+        changeRootViewController()
         
         if userName.isEmpty {
             mEmail.errorMessage = "Please Enter Email"

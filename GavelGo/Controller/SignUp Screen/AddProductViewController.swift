@@ -12,8 +12,8 @@ import SkyFloatingLabelTextField
 class AddProductViewController: UIViewController {
 
     @IBOutlet weak var mProductName: SkyFloatingLabelTextField!
-    @IBOutlet weak var mSelectCategoryTf: UITextField!
-    @IBOutlet weak var mSelectSubCategoryTf: UITextField!
+    @IBOutlet weak var mSelectCategoryTf: SkyFloatingLabelTextField!
+    @IBOutlet weak var mSelectSubCategoryTf: SkyFloatingLabelTextField!
     @IBOutlet weak var mProductImage1: UIButton!
     @IBOutlet weak var mProductImage2: UIButton!
     @IBOutlet weak var mProductImage3: UIButton!
@@ -207,6 +207,20 @@ class AddProductViewController: UIViewController {
     
     @IBAction func cancelBtnAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func selectCategoryAction(_ sender: UIButton) {
+        
+        if sender.tag == 0 {
+            // Category
+            let vc = storyboard?.instantiateViewController(identifier: "SelectCategoryViewController") as! SelectCategoryViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            // Subcategory
+            let vc = storyboard?.instantiateViewController(identifier: "SelectCategoryViewController") as! SelectCategoryViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     
     func addProduct() {

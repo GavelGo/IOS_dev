@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,12 @@
 		3D8F593D23AF2D6F00FA5A67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D8F593C23AF2D6F00FA5A67 /* Assets.xcassets */; };
 		3D8F594023AF2D6F00FA5A67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D8F593E23AF2D6F00FA5A67 /* LaunchScreen.storyboard */; };
 		3DB5101923B13468007403A7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5101823B13468007403A7 /* SignUpViewController.swift */; };
+		3DB5FE2E23BA95C3006D2287 /* HomePagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5FE2D23BA95C3006D2287 /* HomePagerViewController.swift */; };
+		3DB5FE3123BA9735006D2287 /* HomeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5FE3023BA9735006D2287 /* HomeSearchViewController.swift */; };
+		3DB5FE3623BA9C28006D2287 /* MostPopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5FE3523BA9C28006D2287 /* MostPopularViewController.swift */; };
+		3DB5FE3D23BAAB28006D2287 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5FE3C23BAAB28006D2287 /* HomeViewController.swift */; };
+		3DB5FE3F23BAAB33006D2287 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5FE3E23BAAB33006D2287 /* HomeCollectionViewCell.swift */; };
+		3DB5FE4123BAB8B4006D2287 /* SelectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5FE4023BAB8B4006D2287 /* SelectCategoryViewController.swift */; };
 		3DD57BEF23B14D3100819C4A /* ConsumerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */; };
 		3DD57BF123B155E000819C4A /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BF023B155E000819C4A /* HomeNavigationController.swift */; };
 		3DD57BF323B15C7900819C4A /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BF223B15C7900819C4A /* ProductInfoViewController.swift */; };
@@ -27,13 +33,11 @@
 		3DF3D34623B5520300F3C708 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3D34523B5520300F3C708 /* AddProductViewController.swift */; };
 		3DF3D34823B553DC00F3C708 /* StructCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3D34723B553DC00F3C708 /* StructCategories.swift */; };
 		3DF9153423B3D26200F28F52 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF9153323B3D26200F28F52 /* APIs.swift */; };
-		3DFBC0BE23AF78C3003EF278 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBC0BD23AF78C3003EF278 /* HomeViewController.swift */; };
 		3DFBC0C023AF78D7003EF278 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBC0BF23AF78D7003EF278 /* NotificationViewController.swift */; };
 		3DFBC0C223AF78E5003EF278 /* MesasgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBC0C123AF78E5003EF278 /* MesasgeViewController.swift */; };
 		3DFBC0C423AF78F9003EF278 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBC0C323AF78F9003EF278 /* SettingsViewController.swift */; };
 		3DFBC0C623AF7981003EF278 /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBC0C523AF7981003EF278 /* HomeTabBarViewController.swift */; };
 		3DFBC0C923AF7C48003EF278 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBC0C823AF7C48003EF278 /* Utils.swift */; };
-		3DFBC0CC23AF8254003EF278 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBC0CB23AF8254003EF278 /* HomeCollectionViewCell.swift */; };
 		3DFBC0CE23AF8420003EF278 /* HomeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBC0CD23AF8420003EF278 /* HomeStruct.swift */; };
 		48FCD9006AAE0DF8EE019800 /* Pods_GavelGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD35C0626E8B356FC212085 /* Pods_GavelGo.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +56,12 @@
 		3D8F593F23AF2D6F00FA5A67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D8F594123AF2D6F00FA5A67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DB5101823B13468007403A7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3DB5FE2D23BA95C3006D2287 /* HomePagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePagerViewController.swift; sourceTree = "<group>"; };
+		3DB5FE3023BA9735006D2287 /* HomeSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchViewController.swift; sourceTree = "<group>"; };
+		3DB5FE3523BA9C28006D2287 /* MostPopularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularViewController.swift; sourceTree = "<group>"; };
+		3DB5FE3C23BAAB28006D2287 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3DB5FE3E23BAAB33006D2287 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		3DB5FE4023BAB8B4006D2287 /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewController.swift; sourceTree = "<group>"; };
 		3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerViewController.swift; sourceTree = "<group>"; };
 		3DD57BF023B155E000819C4A /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		3DD57BF223B15C7900819C4A /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
@@ -62,13 +72,11 @@
 		3DF3D34523B5520300F3C708 /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		3DF3D34723B553DC00F3C708 /* StructCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructCategories.swift; sourceTree = "<group>"; };
 		3DF9153323B3D26200F28F52 /* APIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
-		3DFBC0BD23AF78C3003EF278 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3DFBC0BF23AF78D7003EF278 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		3DFBC0C123AF78E5003EF278 /* MesasgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesasgeViewController.swift; sourceTree = "<group>"; };
 		3DFBC0C323AF78F9003EF278 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3DFBC0C523AF7981003EF278 /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
 		3DFBC0C823AF7C48003EF278 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		3DFBC0CB23AF8254003EF278 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		3DFBC0CD23AF8420003EF278 /* HomeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStruct.swift; sourceTree = "<group>"; };
 		4DEF771AFA9D62E13421F18D /* Pods-GavelGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GavelGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GavelGo/Pods-GavelGo.debug.xcconfig"; sourceTree = "<group>"; };
 		5AD35C0626E8B356FC212085 /* Pods_GavelGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GavelGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +110,7 @@
 				3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */,
 				3DF3D34123B5188900F3C708 /* PartnerViewController.swift */,
 				3DF3D34523B5520300F3C708 /* AddProductViewController.swift */,
+				3DB5FE4023BAB8B4006D2287 /* SelectCategoryViewController.swift */,
 			);
 			path = "SignUp Screen";
 			sourceTree = "<group>";
@@ -174,7 +183,7 @@
 			children = (
 				3D151B7D23B3BFE1000395C9 /* SignUp Screen */,
 				3D151B7C23B3BFC1000395C9 /* LogInScreen */,
-				3DFBC0BC23AF78A8003EF278 /* Home */,
+				3DFBC0BC23AF78A8003EF278 /* MainDashboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,19 +197,54 @@
 			path = Delegates;
 			sourceTree = "<group>";
 		};
-		3DFBC0BC23AF78A8003EF278 /* Home */ = {
+		3DB5FE2F23BA96D7006D2287 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3DD57BF023B155E000819C4A /* HomeNavigationController.swift */,
-				3DFBC0CA23AF8212003EF278 /* Cell */,
-				3DFBC0BD23AF78C3003EF278 /* HomeViewController.swift */,
-				3DFBC0BF23AF78D7003EF278 /* NotificationViewController.swift */,
-				3DFBC0C123AF78E5003EF278 /* MesasgeViewController.swift */,
-				3DFBC0C323AF78F9003EF278 /* SettingsViewController.swift */,
-				3DFBC0C523AF7981003EF278 /* HomeTabBarViewController.swift */,
+				3DB5FE2D23BA95C3006D2287 /* HomePagerViewController.swift */,
+				3DB5FE3023BA9735006D2287 /* HomeSearchViewController.swift */,
+				3DB5FE3523BA9C28006D2287 /* MostPopularViewController.swift */,
+				3DB5FE3C23BAAB28006D2287 /* HomeViewController.swift */,
 				3DD57BF223B15C7900819C4A /* ProductInfoViewController.swift */,
+				3DFBC0CA23AF8212003EF278 /* Cell */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		3DB5FE3223BA980A006D2287 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				3DFBC0BF23AF78D7003EF278 /* NotificationViewController.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		3DB5FE3323BA9817006D2287 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				3DFBC0C123AF78E5003EF278 /* MesasgeViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		3DB5FE3423BA9822006D2287 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3DFBC0C323AF78F9003EF278 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		3DFBC0BC23AF78A8003EF278 /* MainDashboard */ = {
+			isa = PBXGroup;
+			children = (
+				3DB5FE3423BA9822006D2287 /* Settings */,
+				3DB5FE3323BA9817006D2287 /* Message */,
+				3DB5FE3223BA980A006D2287 /* Notification */,
+				3DB5FE2F23BA96D7006D2287 /* Home */,
+				3DD57BF023B155E000819C4A /* HomeNavigationController.swift */,
+				3DFBC0C523AF7981003EF278 /* HomeTabBarViewController.swift */,
+			);
+			path = MainDashboard;
 			sourceTree = "<group>";
 		};
 		3DFBC0C723AF7C31003EF278 /* Extra */ = {
@@ -215,7 +259,7 @@
 		3DFBC0CA23AF8212003EF278 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				3DFBC0CB23AF8254003EF278 /* HomeCollectionViewCell.swift */,
+				3DB5FE3E23BAAB33006D2287 /* HomeCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -334,36 +378,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GavelGo/Pods-GavelGo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/FaveButton/FaveButton.framework",
-				"${BUILT_PRODUCTS_DIR}/FloatRatingView/FloatRatingView.framework",
-				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
-				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-GavelGo/Pods-GavelGo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FaveButton.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FloatRatingView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-GavelGo/Pods-GavelGo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GavelGo/Pods-GavelGo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GavelGo/Pods-GavelGo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -376,10 +399,12 @@
 				3DF3D34623B5520300F3C708 /* AddProductViewController.swift in Sources */,
 				3DDCCB5F23B7CB0600E55E70 /* StructSubCategories.swift in Sources */,
 				3D151B7F23B3C025000395C9 /* ForgotPasswordViewController.swift in Sources */,
+				3DB5FE4123BAB8B4006D2287 /* SelectCategoryViewController.swift in Sources */,
 				3DFBC0C023AF78D7003EF278 /* NotificationViewController.swift in Sources */,
 				3D8F593823AF2D6E00FA5A67 /* ViewController.swift in Sources */,
 				3DFBC0C923AF7C48003EF278 /* Utils.swift in Sources */,
 				3D151B8223B3C205000395C9 /* WebService.swift in Sources */,
+				3DB5FE3F23BAAB33006D2287 /* HomeCollectionViewCell.swift in Sources */,
 				3DF9153423B3D26200F28F52 /* APIs.swift in Sources */,
 				3DDB92E423B8AA6200333E82 /* StructProduct.swift in Sources */,
 				3DD57BF323B15C7900819C4A /* ProductInfoViewController.swift in Sources */,
@@ -387,9 +412,12 @@
 				3DF3D34423B51C9000F3C708 /* JCUIImagePickerManager.swift in Sources */,
 				3D8F593423AF2D6E00FA5A67 /* AppDelegate.swift in Sources */,
 				3DF3D34223B5188900F3C708 /* PartnerViewController.swift in Sources */,
+				3DB5FE3D23BAAB28006D2287 /* HomeViewController.swift in Sources */,
 				3DD57BF123B155E000819C4A /* HomeNavigationController.swift in Sources */,
+				3DB5FE3623BA9C28006D2287 /* MostPopularViewController.swift in Sources */,
 				3DF3D34823B553DC00F3C708 /* StructCategories.swift in Sources */,
-				3DFBC0CC23AF8254003EF278 /* HomeCollectionViewCell.swift in Sources */,
+				3DB5FE3123BA9735006D2287 /* HomeSearchViewController.swift in Sources */,
+				3DB5FE2E23BA95C3006D2287 /* HomePagerViewController.swift in Sources */,
 				3D151B8423B3C9A7000395C9 /* APIResponseStruct.swift in Sources */,
 				3DB5101923B13468007403A7 /* SignUpViewController.swift in Sources */,
 				3D8F593623AF2D6E00FA5A67 /* SceneDelegate.swift in Sources */,
@@ -397,7 +425,6 @@
 				3DFBC0C623AF7981003EF278 /* HomeTabBarViewController.swift in Sources */,
 				3DFBC0C223AF78E5003EF278 /* MesasgeViewController.swift in Sources */,
 				3DFBC0CE23AF8420003EF278 /* HomeStruct.swift in Sources */,
-				3DFBC0BE23AF78C3003EF278 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

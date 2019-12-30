@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var mCollectionView: UICollectionView!
     
+    var mNavigationViewController: UINavigationController?
     var mData = [StructProduct]()
     var locationManager: CLLocationManager = CLLocationManager.init()
     
@@ -55,7 +56,7 @@ class HomeViewController: UIViewController {
         mCollectionView.setCollectionViewLayout(layout, animated: true)
 
         getProducts()
-        requestLocationService()
+        //requestLocationService()
         
     }
     
@@ -146,9 +147,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        
+        print("Click Product... \(storyboard)")
         let vc = storyboard?.instantiateViewController(withIdentifier: "ProductInfoViewController") as! ProductInfoViewController
-        navigationController?.pushViewController(vc, animated: true)
+        //self.parent?.navigationController?.pushViewController(vc, animated: true)
+        //self.navigationController?.topViewController?.navigationController?.pushViewController(vc, animated: true)
+        self.mNavigationViewController?.pushViewController(vc, animated: true)
         
     }
     
