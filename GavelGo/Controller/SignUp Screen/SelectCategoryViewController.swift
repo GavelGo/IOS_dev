@@ -8,6 +8,16 @@
 
 import UIKit
 
+enum enumSelectCategoryType {
+    case CATEGORY
+    case SUBCATEGORY
+}
+
+protocol PSelectCategoryHandler {
+    func onSelectCategoryCallBack(category: StructCategories)
+    func onSelectSubCategoryCallBack(subCategory: StructSubCategories)
+}
+
 class SelectCategoryTableViewCell: UITableViewCell {
     @IBOutlet weak var mTitle: UILabel!
 }
@@ -18,12 +28,28 @@ class SelectCategoryViewController: UIViewController {
     fileprivate let searchController = UISearchController(searchResultsController: nil)
     var mSearchBar = UISearchBar()
     
+    var mCategories = [StructCategories]()
+    var mFilterCategories = [StructCategories]()
+    var mSelectedCat: StructCategories?
+    var mSubCategories = [StructSubCategories]()
+    var mFilterSubCategories = [StructSubCategories]()
+    var mSelectedSubCat: StructSubCategories?
+    var categoryType: enumSelectCategoryType!
+    var delegate: PSelectCategoryHandler?
+    
     @IBOutlet weak var mTableView: UITableView!
+    @IBOutlet weak var mNavigationItem: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupSearchBar()
+        
+        mTableView.delegate = self
+        mTableView.dataSource = self
+        
+        mFilterCategories = mCategories
+        mFilterSubCategories = mSubCategories
         
     }
     
@@ -37,16 +63,14 @@ class SelectCategoryViewController: UIViewController {
         self.searchController.searchBar.delegate = self
         
         if let textfield = searchController.searchBar.value(forKey: "searchField") as? UITextField {
-            textfield.textColor = UIColor.blue
-            if let backgroundview = textfield.subviews.first {
-
-                // Background color
-                backgroundview.backgroundColor = UIColor.white
-
-                // Rounded corner
-                backgroundview.layer.cornerRadius = 10;
-                backgroundview.clipsToBounds = true;
+            print("Inside TextField...")
+            textfield.backgroundColor = .white
+            
+            if let leftView = textfield.leftView as? UIImageView {
+                leftView.image = leftView.image?.withRenderingMode(.alwaysTemplate)
+                leftView.tintColor = #colorLiteral(red: 0.1333333333, green: 0.5490196078, blue: 0.1333333333, alpha: 1)
             }
+
         }
         
         if #available(iOS 11.0, *) {
@@ -72,32 +96,34 @@ class SelectCategoryViewController: UIViewController {
     func filterFunction(searchText : String) {
         print(searchText)
         
-//        if searchText.count > 0 {
-//
-//            mTempData = [MExhibitors]()
-//
-//            for item in mData {
-//
-//                if item.companyName.lowercased().contains(searchText.lowercased()) {
-//
-//                    mTempData.append(item)
-//
-//                }
-//
-//            }
-//
-//            sortExhibitors()
-//            //mTableView.reloadData()
-//
-//        } else {
-//
-//            mTempData = mData
-//
-//            sortExhibitors()
-//
-//            //mTableView.reloadData()
-//
-//        }
+        if searchText.count > 0 {
+
+            if categoryType == enumSelectCategoryType.CATEGORY {
+                
+                mFilterCategories.removeAll()
+                mFilterCategories = mCategories.filter{ $0.categoryName.contains(searchText) }
+                
+            } else if categoryType == enumSelectCategoryType.SUBCATEGORY {
+                
+                mFilterSubCategories.removeAll()
+                mFilterSubCategories = mSubCategories.filter{ $0.subCategoryName.contains(searchText) }
+                
+            }
+
+        } else {
+
+            if categoryType == enumSelectCategoryType.CATEGORY {
+                
+                mFilterCategories = mCategories
+                
+            } else if categoryType == enumSelectCategoryType.SUBCATEGORY {
+                
+                mFilterSubCategories = mSubCategories
+                
+            }
+        }
+        
+        self.mTableView.reloadData()
         
     }
 
@@ -144,6 +170,51 @@ extension SelectCategoryViewController: UISearchBarDelegate {
         
         //Filter function
         self.filterFunction(searchText: searchBar.text!)
+    }
+    
+}
+
+extension SelectCategoryViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if categoryType == enumSelectCategoryType.CATEGORY {
+            return mFilterCategories.count
+        } else if categoryType == enumSelectCategoryType.SUBCATEGORY {
+            return mFilterSubCategories.count
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SelectCategoryTableViewCell") as! SelectCategoryTableViewCell
+        if categoryType == enumSelectCategoryType.CATEGORY {
+            let data = mFilterCategories[indexPath.row]
+            cell.mTitle.text = data.categoryName
+            if mSelectedCat?.categoryName == data.categoryName {
+                cell.accessoryType = .checkmark
+            } else {
+                cell.accessoryType = .none
+            }
+        } else if categoryType == enumSelectCategoryType.SUBCATEGORY {
+            let data = mFilterSubCategories[indexPath.row]
+            cell.mTitle.text = data.subCategoryName
+            if mSelectedSubCat?.subCategoryName == data.subCategoryName {
+                cell.accessoryType = .checkmark
+            } else {
+                cell.accessoryType = .none
+            }
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if self.categoryType == enumSelectCategoryType.CATEGORY {
+            self.delegate?.onSelectCategoryCallBack(category: mFilterCategories[indexPath.row])
+        } else if categoryType == enumSelectCategoryType.SUBCATEGORY {
+            delegate?.onSelectSubCategoryCallBack(subCategory: mFilterSubCategories[indexPath.row])
+        }
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

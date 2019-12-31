@@ -13,8 +13,8 @@ import Toast_Swift
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var mUserProfileImageView: UIImageView!
-    @IBOutlet weak var mSearchView: UIView!
+//    @IBOutlet weak var mUserProfileImageView: UIImageView!
+//    @IBOutlet weak var mSearchView: UIView!
     
     @IBOutlet weak var mCollectionView: UICollectionView!
     
@@ -25,9 +25,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mSearchView.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-        mSearchView.layer.borderWidth = 0.5
-        mSearchView.layer.cornerRadius = 3
+        setupNavigationBar()
+        
+//        mSearchView.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+//        mSearchView.layer.borderWidth = 0.5
+//        mSearchView.layer.cornerRadius = 3
         
         mCollectionView.delegate = self
         mCollectionView.dataSource = self
@@ -61,7 +63,28 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
+        //navigationController?.navigationBar.isHidden = true
+    }
+
+    func setupNavigationBar() {
+        
+        let profileImg    = UIImage(systemName: "person.crop.circle.fill")
+        let profileItem   = UIBarButtonItem(image: profileImg,  style: .plain, target: self, action: #selector(profileBtnAction(_:)))
+        navigationItem.rightBarButtonItems = [profileItem]
+        self.parent?.navigationItem.rightBarButtonItems = [profileItem]
+        
+        let locationImg    = UIImage(systemName: "location.fill")
+        let locationItem   = UIBarButtonItem(image: locationImg,  style: .plain, target: self, action: #selector(locationBtnAction(_:)))
+        //navigationItem.leftBarButtonItems = [locationItem]
+        
+    }
+    
+    @objc func profileBtnAction(_ sender: AnyObject){
+        
+    }
+    
+    @objc func locationBtnAction(_ sender: AnyObject){
+        
     }
     
     func requestLocationService() {

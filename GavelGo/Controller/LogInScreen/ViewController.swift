@@ -116,7 +116,7 @@ class ViewController: UIViewController {
             self.mSignInIndicator.isHidden = true
             self.mSignInBtn.isHidden = false
             
-            self.changeRootViewController()
+            //self.changeRootViewController()
             
             guard let data = response else { return }
             do {

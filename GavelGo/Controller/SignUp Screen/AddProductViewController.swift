@@ -30,9 +30,9 @@ class AddProductViewController: UIViewController {
     var subCategoryPicker: UIPickerView!
     
     var mCategories = [StructCategories]()
-    var mSelectedCat: StructCategories!
+    var mSelectedCat: StructCategories?
     var mSubCategories = [StructSubCategories]()
-    var mSelectedSubCat: StructSubCategories!
+    var mSelectedSubCat: StructSubCategories?
     
     var signUpValues: StructSignUpValues!
     
@@ -214,10 +214,20 @@ class AddProductViewController: UIViewController {
         if sender.tag == 0 {
             // Category
             let vc = storyboard?.instantiateViewController(identifier: "SelectCategoryViewController") as! SelectCategoryViewController
+            vc.mCategories = mCategories
+            vc.categoryType = .CATEGORY
+            vc.delegate = self
+            vc.mSelectedCat = mSelectedCat
+            vc.mNavigationItem.title = "Select Business Category"
             self.navigationController?.pushViewController(vc, animated: true)
         } else {
             // Subcategory
             let vc = storyboard?.instantiateViewController(identifier: "SelectCategoryViewController") as! SelectCategoryViewController
+            vc.mSubCategories = mSubCategories
+            vc.categoryType = .SUBCATEGORY
+            vc.delegate = self
+            vc.mSelectedSubCat = mSelectedSubCat
+            vc.mNavigationItem.title = "Select Subcategory"
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
@@ -281,4 +291,18 @@ extension AddProductViewController: UITextFieldDelegate {
         self.view.endEditing(true)
         return false
     }
+}
+
+extension AddProductViewController: PSelectCategoryHandler {
+    
+    func onSelectCategoryCallBack(category: StructCategories) {
+        self.mSelectCategoryTf.text = category.categoryName
+        self.mSelectedCat = category
+    }
+    
+    func onSelectSubCategoryCallBack(subCategory: StructSubCategories) {
+        self.mSelectSubCategoryTf.text = subCategory.subCategoryName
+        self.mSelectedSubCat = subCategory
+    }
+    
 }

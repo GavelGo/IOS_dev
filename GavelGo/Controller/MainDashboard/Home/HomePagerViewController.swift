@@ -22,11 +22,39 @@ class HomePagerViewController: PolioPagerViewController {
         //cells
         self.eachLineSpacing = 0
         
+        setupNavigationBar()
+        
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
+        //navigationController?.navigationBar.isHidden = true
+    }
+    
+    func setupNavigationBar() {
+        
+        let profileImg    = UIImage(systemName: "person.crop.circle.fill")
+        let profileItem   = UIBarButtonItem(image: profileImg,  style: .plain, target: self, action: #selector(profileBtnAction(_:)))
+        self.parent?.navigationItem.leftBarButtonItems = [profileItem]
+        
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "location.fill"), for: .normal)
+        button.setTitle("Nearby", for: .normal)
+        button.sizeToFit()
+        button.addTarget(self, action: #selector(locationBtnAction(_:)), for: .touchUpInside)
+        let locationItem = UIBarButtonItem(customView: button)
+        //let locationImg    = UIImage(systemName: "location.fill")
+        //let locationItem   = UIBarButtonItem(image: locationImg,  style: .plain, target: self, action: #selector(locationBtnAction(_:)))
+        self.parent?.navigationItem.rightBarButtonItems = [locationItem]
+        
+    }
+    
+    @objc func profileBtnAction(_ sender: AnyObject){
+        
+    }
+    
+    @objc func locationBtnAction(_ sender: AnyObject){
+        
     }
     
     override func tabItems() -> [TabItem] {
