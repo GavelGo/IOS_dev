@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (4.9.1)
+  - Chatto (3.4.0)
+  - ChattoAdditions (3.4.0):
+    - Chatto
   - FaveButton (3.2.1)
   - FloatRatingView (4.0)
   - ImageSlideshow (1.8.1):
@@ -50,6 +53,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.9.0)
+  - Chatto (= 3.4.0)
+  - ChattoAdditions (= 3.4.0)
   - FaveButton
   - FloatRatingView (~> 4)
   - ImageSlideshow (~> 1.8.1)
@@ -75,11 +80,15 @@ SPEC REPOS:
     - SVProgressHUD
     - Toast-Swift
   trunk:
+    - Chatto
+    - ChattoAdditions
     - IQKeyboardManagerSwift
     - PolioPager
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Chatto: c00cb1af4c57b797041ce77a115d4f535ec54991
+  ChattoAdditions: 24617c63386fbaf971f11514fdc748d37f66f093
   FaveButton: 93cfebf6030336fa7653fad2068c3152ed668b39
   FloatRatingView: bb6bdddfbeec51b1d387b4bd50abc27b4dfccd48
   ImageSlideshow: 634865d7d4e96f21e3830a31b51bde768cc94cea
@@ -91,6 +100,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 99b9589e4309c5771b9c3796037aa04d79f03c86
+PODFILE CHECKSUM: db952104b882b3cd3b3073d336598cfe8f5ca90a
 
 COCOAPODS: 1.8.4
