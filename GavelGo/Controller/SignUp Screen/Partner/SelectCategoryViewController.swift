@@ -84,15 +84,6 @@ class SelectCategoryViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.tintColor = .white
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
-    }
-    
     func filterFunction(searchText : String) {
         print(searchText)
         

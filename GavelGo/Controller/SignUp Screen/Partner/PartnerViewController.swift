@@ -31,6 +31,7 @@ class PartnerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.tintColor = .white
         mSaveView.themeSaveBtn()
         mAddProductView.themeSaveBtn()
         mUserImg.makeRounded()

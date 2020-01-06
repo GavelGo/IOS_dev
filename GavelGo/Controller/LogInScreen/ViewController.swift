@@ -36,6 +36,14 @@ class ViewController: UIViewController {
         mSignInBtnView.themeSaveBtn()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
 
     @IBAction func forgotPassAction(_ sender: Any) {
     }

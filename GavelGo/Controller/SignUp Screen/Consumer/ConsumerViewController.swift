@@ -38,6 +38,7 @@ class ConsumerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.tintColor = .white
         mSaveBtnView.themeSaveBtn()
         mCancelBtnView.themeSaveBtn()
         mUserImage.makeRounded()

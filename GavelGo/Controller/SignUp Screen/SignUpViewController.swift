@@ -101,6 +101,14 @@ class SignUpViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     @objc func pickerDoneButtonAction(){
         if currentPickerViewSelectedRow == nil {
             self.mUserTypetf.text = mListOfUserTypes[0]
