@@ -8,9 +8,11 @@
 
 import UIKit
 import SkyFloatingLabelTextField
+import TagListView
 
 class AddProductViewController: UIViewController {
 
+    @IBOutlet weak var mScrollView: UIScrollView!
     @IBOutlet weak var mProductName: SkyFloatingLabelTextField!
     @IBOutlet weak var mSelectCategoryTf: SkyFloatingLabelTextField!
     @IBOutlet weak var mSelectSubCategoryTf: SkyFloatingLabelTextField!
@@ -19,16 +21,20 @@ class AddProductViewController: UIViewController {
     @IBOutlet weak var mProductImage3: UIButton!
     @IBOutlet weak var mPriceTf: UITextField!
     @IBOutlet weak var mUnitBtn: UIButton!
+    @IBOutlet weak var mUnitTf: SkyFloatingLabelTextField!
     @IBOutlet weak var mSelectKeywords: SkyFloatingLabelTextField!
     @IBOutlet weak var mProductDescription: UITextView!
     @IBOutlet weak var mSaveBtnView: UIView!
     @IBOutlet weak var mCancelBtnView: UIView!
     @IBOutlet weak var mSaveBtn: UIButton!
     @IBOutlet weak var mSaveAvtivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var mTagView: TagListView!
+    @IBOutlet weak var mAddressesCount: UILabel!
     
     var categoryPicker: UIPickerView!
     var subCategoryPicker: UIPickerView!
-    
+    var tagArray = [String]()
+    var addressArray = [StructAddresses]()
     var mCategories = [StructCategories]()
     var mSelectedCat: StructCategories?
     var mSubCategories = [StructSubCategories]()
@@ -58,57 +64,60 @@ class AddProductViewController: UIViewController {
         mProductImage3.layer.borderColor = #colorLiteral(red: 0.1333333333, green: 0.5490196078, blue: 0.1333333333, alpha: 1)
         mProductImage3.layer.cornerRadius = 3
         
-        let toolBar = UIToolbar()
-        toolBar.barStyle = .default
-        toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-        toolBar.sizeToFit()
-
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.pickerDoneButtonAction))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.pickercancelClick))
-
-        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        
-        categoryPicker = UIPickerView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 150))
-        categoryPicker.backgroundColor = .white
-        categoryPicker.tag = 1
-        
-        categoryPicker.delegate = self
-        categoryPicker.dataSource = self
-        
-        mSelectCategoryTf.inputView = categoryPicker
-        mSelectCategoryTf.inputAccessoryView = toolBar
-        
-        let toolBar1 = UIToolbar()
-        toolBar1.barStyle = .default
-        toolBar1.isTranslucent = true
-        toolBar1.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-        toolBar1.sizeToFit()
-
-        let doneButton1 = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.pickerDoneButtonActionForSubCate))
-        let spaceButton1 = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton1 = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.pickercancelClickForSubCate))
-
-        toolBar1.setItems([cancelButton1, spaceButton1, doneButton1], animated: false)
-        toolBar1.isUserInteractionEnabled = true
-        
-        subCategoryPicker = UIPickerView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 150))
-        subCategoryPicker.backgroundColor = .white
-        subCategoryPicker.tag = 2
-        
-        subCategoryPicker.delegate = self
-        subCategoryPicker.dataSource = self
-        
-        mSelectSubCategoryTf.inputView = subCategoryPicker
-        mSelectSubCategoryTf.inputAccessoryView = toolBar1
+//        let toolBar = UIToolbar()
+//        toolBar.barStyle = .default
+//        toolBar.isTranslucent = true
+//        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+//        toolBar.sizeToFit()
+//
+//        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.pickerDoneButtonAction))
+//        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+//        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.pickercancelClick))
+//
+//        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+//        toolBar.isUserInteractionEnabled = true
+//
+//        categoryPicker = UIPickerView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 150))
+//        categoryPicker.backgroundColor = .white
+//        categoryPicker.tag = 1
+//
+//        categoryPicker.delegate = self
+//        categoryPicker.dataSource = self
+//
+//        mSelectCategoryTf.inputView = categoryPicker
+//        mSelectCategoryTf.inputAccessoryView = toolBar
+//
+//        let toolBar1 = UIToolbar()
+//        toolBar1.barStyle = .default
+//        toolBar1.isTranslucent = true
+//        toolBar1.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+//        toolBar1.sizeToFit()
+//
+//        let doneButton1 = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.pickerDoneButtonActionForSubCate))
+//        let spaceButton1 = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+//        let cancelButton1 = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.pickercancelClickForSubCate))
+//
+//        toolBar1.setItems([cancelButton1, spaceButton1, doneButton1], animated: false)
+//        toolBar1.isUserInteractionEnabled = true
+//
+//        subCategoryPicker = UIPickerView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 150))
+//        subCategoryPicker.backgroundColor = .white
+//        subCategoryPicker.tag = 2
+//
+//        subCategoryPicker.delegate = self
+//        subCategoryPicker.dataSource = self
+//
+//        mSelectSubCategoryTf.inputView = subCategoryPicker
+//        mSelectSubCategoryTf.inputAccessoryView = toolBar1
         
         mSaveBtn.isHidden = false
         mSaveAvtivityIndicator.isHidden = true
         
         self.getCategories()
         self.getSubCategories()
+        
+        mAddressesCount.text = ""
+        mTagView.delegate = self
         
     }
     
@@ -196,6 +205,15 @@ class AddProductViewController: UIViewController {
                 
             }
         }
+        
+    }
+    
+    @IBAction func openAddressesAction(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(identifier: "AddressesViewController") as! AddressesViewController
+        vc.addressArray = self.addressArray
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
         
     }
     
@@ -289,6 +307,17 @@ extension AddProductViewController: UIPickerViewDelegate, UIPickerViewDataSource
 
 extension AddProductViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let text = textField.text?.trimmingCharacters(in: .whitespaces)
+        if !text!.isEmpty {
+            if textField.tag == 1 {
+                tagArray.append(text!)
+                mTagView.textFont = UIFont.systemFont(ofSize: 17)
+                mTagView.removeAllTags()
+                mTagView.addTags(tagArray)
+                textField.text = ""
+                return false
+            }
+        }
         self.view.endEditing(true)
         return false
     }
@@ -304,6 +333,31 @@ extension AddProductViewController: PSelectCategoryHandler {
     func onSelectSubCategoryCallBack(subCategory: StructSubCategories) {
         self.mSelectSubCategoryTf.text = subCategory.subCategoryName
         self.mSelectedSubCat = subCategory
+    }
+    
+}
+
+extension AddProductViewController: TagListViewDelegate {
+    func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        for (index, item) in self.tagArray.enumerated() {
+            if item == title {
+                self.tagArray.remove(at: index)
+                break
+            }
+        }
+        self.mTagView.removeTag(title)
+    }
+}
+
+extension AddProductViewController: PAddressesDelegate {
+    
+    func onAddressesCallBack(data: [StructAddresses]) {
+        self.addressArray = data
+        if data.isEmpty {
+            self.mAddressesCount.text = ""
+        } else {
+            self.mAddressesCount.text = String(data.count)
+        }
     }
     
 }

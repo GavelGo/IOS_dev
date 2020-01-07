@@ -22,5 +22,7 @@ target 'GavelGo' do
   # Swift 4.2
   pod 'Chatto', '= 3.4.0'
   pod 'ChattoAdditions', '= 3.4.0' # if you want to use the cells or the input component
+  pod 'TagListView', '~> 1.0'
+  pod 'FittedSheets'
 
 end

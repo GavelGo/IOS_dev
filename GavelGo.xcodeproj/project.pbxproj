@@ -31,6 +31,9 @@
 		3DB5FE3D23BAAB28006D2287 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5FE3C23BAAB28006D2287 /* HomeViewController.swift */; };
 		3DB5FE3F23BAAB33006D2287 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5FE3E23BAAB33006D2287 /* HomeCollectionViewCell.swift */; };
 		3DB5FE4123BAB8B4006D2287 /* SelectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5FE4023BAB8B4006D2287 /* SelectCategoryViewController.swift */; };
+		3DB74AA623C5374D00AFF7A2 /* AddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB74AA523C5374D00AFF7A2 /* AddressesViewController.swift */; };
+		3DB74AA823C5376A00AFF7A2 /* BSAddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB74AA723C5376A00AFF7A2 /* BSAddAddressViewController.swift */; };
+		3DB74AAB23C53CCA00AFF7A2 /* StructAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB74AAA23C53CCA00AFF7A2 /* StructAddresses.swift */; };
 		3DC07CF223BD237900CD2E21 /* ChatBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC07CF123BD237900CD2E21 /* ChatBaseViewController.swift */; };
 		3DD57BEF23B14D3100819C4A /* ConsumerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */; };
 		3DD57BF123B155E000819C4A /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD57BF023B155E000819C4A /* HomeNavigationController.swift */; };
@@ -80,6 +83,9 @@
 		3DB5FE3C23BAAB28006D2287 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3DB5FE3E23BAAB33006D2287 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		3DB5FE4023BAB8B4006D2287 /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewController.swift; sourceTree = "<group>"; };
+		3DB74AA523C5374D00AFF7A2 /* AddressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesViewController.swift; sourceTree = "<group>"; };
+		3DB74AA723C5376A00AFF7A2 /* BSAddAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSAddAddressViewController.swift; sourceTree = "<group>"; };
+		3DB74AAA23C53CCA00AFF7A2 /* StructAddresses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructAddresses.swift; sourceTree = "<group>"; };
 		3DC07CF123BD237900CD2E21 /* ChatBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBaseViewController.swift; sourceTree = "<group>"; };
 		3DD57BEE23B14D3100819C4A /* ConsumerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerViewController.swift; sourceTree = "<group>"; };
 		3DD57BF023B155E000819C4A /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
@@ -221,6 +227,7 @@
 		3D8F594823AF335500FA5A67 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3DB74AA923C53CA400AFF7A2 /* SignUpModels */,
 				3D151B8023B3C1E9000395C9 /* Networking */,
 				3DFBC0CD23AF8420003EF278 /* HomeStruct.swift */,
 				3D151B8323B3C9A7000395C9 /* APIResponseStruct.swift */,
@@ -293,6 +300,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		3DB74AA923C53CA400AFF7A2 /* SignUpModels */ = {
+			isa = PBXGroup;
+			children = (
+				3DB74AAA23C53CCA00AFF7A2 /* StructAddresses.swift */,
+			);
+			path = SignUpModels;
+			sourceTree = "<group>";
+		};
 		3DFBC0BC23AF78A8003EF278 /* MainDashboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +345,8 @@
 				3DF3D34523B5520300F3C708 /* AddProductViewController.swift */,
 				3DB5FE4023BAB8B4006D2287 /* SelectCategoryViewController.swift */,
 				3DFF72D423C3CBA60087E034 /* ProductListViewController.swift */,
+				3DB74AA523C5374D00AFF7A2 /* AddressesViewController.swift */,
+				3DB74AA723C5376A00AFF7A2 /* BSAddAddressViewController.swift */,
 			);
 			path = Partner;
 			sourceTree = "<group>";
@@ -495,6 +512,7 @@
 				3DD57BF123B155E000819C4A /* HomeNavigationController.swift in Sources */,
 				3DB5FE3623BA9C28006D2287 /* MostPopularViewController.swift in Sources */,
 				3DF3D34823B553DC00F3C708 /* StructCategories.swift in Sources */,
+				3DB74AA823C5376A00AFF7A2 /* BSAddAddressViewController.swift in Sources */,
 				3D004AED23BE681E00755ED1 /* ChatDataSource.swift in Sources */,
 				3DB5FE3123BA9735006D2287 /* HomeSearchViewController.swift in Sources */,
 				3DB5FE2E23BA95C3006D2287 /* HomePagerViewController.swift in Sources */,
@@ -511,8 +529,10 @@
 				3D004AEF23BE690B00755ED1 /* SlidingDataSource.swift in Sources */,
 				3DFBC0C223AF78E5003EF278 /* MesasgeViewController.swift in Sources */,
 				3D004AF723BE6E4F00755ED1 /* ChatMsgSender.swift in Sources */,
+				3DB74AA623C5374D00AFF7A2 /* AddressesViewController.swift in Sources */,
 				3DC07CF223BD237900CD2E21 /* ChatBaseViewController.swift in Sources */,
 				3DFBC0CE23AF8420003EF278 /* HomeStruct.swift in Sources */,
+				3DB74AAB23C53CCA00AFF7A2 /* StructAddresses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
