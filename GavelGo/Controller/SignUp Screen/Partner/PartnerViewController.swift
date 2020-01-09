@@ -24,8 +24,12 @@ class PartnerViewController: UIViewController {
     @IBOutlet weak var mSaveView: UIView!
     @IBOutlet weak var mSaveBtn: UIButton!
     @IBOutlet weak var mAddProductView: UIView!
+    @IBOutlet weak var mAddProductBtn: UIButton!
     @IBOutlet weak var mSaveActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var mUserName: UILabel!
+    @IBOutlet weak var mEmail: UILabel!
     
+    var productsArray = [StructProductForSignUp]()
     var signUpValues: StructSignUpValues!
     
     override func viewDidLoad() {
@@ -45,6 +49,10 @@ class PartnerViewController: UIViewController {
         mState.delegate = self
         mZipcode.delegate = self
         mDescription.delegate = self
+        
+//        let name = signUpValues.fName + " " + signUpValues.lName
+//        mUserName.text = name
+//        mEmail.text = signUpValues.email
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -229,8 +237,10 @@ class PartnerViewController: UIViewController {
 //        signUpValues.zipcode = zipcode!
 //        signUpValues.description = description!
         
-        let vc = storyboard?.instantiateViewController(identifier: "AddProductViewController") as! AddProductViewController
+        let vc = storyboard?.instantiateViewController(identifier: "ProductListViewController") as! ProductListViewController
         vc.signUpValues = signUpValues
+        vc.productsArray = productsArray
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
         
     }
@@ -242,4 +252,18 @@ extension PartnerViewController: UITextFieldDelegate {
         self.view.endEditing(true)
         return false
     }
+}
+
+extension PartnerViewController: PProductListDelegate {
+    
+    func onProductListCallBack(products: [StructProductForSignUp]) {
+        self.productsArray = products
+        if products.isEmpty {
+            self.mAddProductBtn.setTitle("Add Product", for: .normal)
+        } else {
+            let text = "Add Product (\(products.count))"
+            self.mAddProductBtn.setTitle(text, for: .normal)
+        }
+    }
+    
 }

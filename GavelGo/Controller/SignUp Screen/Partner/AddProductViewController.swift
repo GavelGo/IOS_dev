@@ -9,6 +9,11 @@
 import UIKit
 import SkyFloatingLabelTextField
 import TagListView
+import Toast_Swift
+
+protocol PAddProductDelegate {
+    func addNewProductCallBack(product: StructProductForSignUp)
+}
 
 class AddProductViewController: UIViewController {
 
@@ -23,6 +28,7 @@ class AddProductViewController: UIViewController {
     @IBOutlet weak var mUnitBtn: UIButton!
     @IBOutlet weak var mUnitTf: SkyFloatingLabelTextField!
     @IBOutlet weak var mSelectKeywords: SkyFloatingLabelTextField!
+    @IBOutlet weak var mShortDescription: SkyFloatingLabelTextField!
     @IBOutlet weak var mProductDescription: UITextView!
     @IBOutlet weak var mSaveBtnView: UIView!
     @IBOutlet weak var mCancelBtnView: UIView!
@@ -41,6 +47,7 @@ class AddProductViewController: UIViewController {
     var mSelectedSubCat: StructSubCategories?
     
     var signUpValues: StructSignUpValues!
+    var delegate: PAddProductDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +70,9 @@ class AddProductViewController: UIViewController {
         mProductImage3.layer.borderWidth = 0.5
         mProductImage3.layer.borderColor = #colorLiteral(red: 0.1333333333, green: 0.5490196078, blue: 0.1333333333, alpha: 1)
         mProductImage3.layer.cornerRadius = 3
+        
+        mPriceTf.keyboardType = .numberPad
+        mUnitTf.keyboardType = .numberPad
         
 //        let toolBar = UIToolbar()
 //        toolBar.barStyle = .default
@@ -221,7 +231,84 @@ class AddProductViewController: UIViewController {
     }
     
     @IBAction func saveProductAction(_ sender: Any) {
-        addProduct()
+        
+        let productName = mProductName.text?.trimmingCharacters(in: .whitespaces)
+        let category = mSelectCategoryTf.text?.trimmingCharacters(in: .whitespaces)
+        let subCategory = mSelectSubCategoryTf.text?.trimmingCharacters(in: .whitespaces)
+        let price = mPriceTf.text?.trimmingCharacters(in: .whitespaces)
+        let units = mUnitTf.text?.trimmingCharacters(in: .whitespaces)
+        let description = mProductDescription.text.trimmingCharacters(in: .whitespaces)
+        let shortDescription = mShortDescription.text?.trimmingCharacters(in: .whitespaces)
+        
+        resetValidation()
+        
+        if productName!.isEmpty {
+            mProductName.errorMessage = "Please Enter Product Name"
+            return
+        } else if category!.isEmpty {
+            mSelectCategoryTf.errorMessage = "Please Select Business Category"
+            return
+        } else if subCategory!.isEmpty {
+            mSelectSubCategoryTf.errorMessage = "Please Select Subcategory"
+            return
+        } else if price!.isEmpty {
+            mPriceTf.layer.borderColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+            self.navigationController?.view.makeToast("Please Enter Price")
+            return
+        } else if units!.isEmpty {
+            mUnitTf.errorMessage = "Please Enter Units"
+            return
+        } else if description.isEmpty {
+            mProductDescription.layer.borderColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+            self.navigationController?.view.makeToast("Please Enter Description")
+            return
+        } else if shortDescription!.isEmpty {
+            mShortDescription.errorMessage = "Please Enter Short Description"
+            return
+        }
+        
+        if addressArray.isEmpty {
+            self.navigationController?.view.makeToast("Please Enter Address")
+            return
+        }
+        
+        if tagArray.isEmpty {
+            self.navigationController?.view.makeToast("Please Select Keywords")
+            return
+        }
+        
+        let img1 = mProductImage1.imageView?.image
+        let img2 = mProductImage2.imageView?.image
+        let img3 = mProductImage3.imageView?.image
+        
+//        if img1?.accessibilityIdentifier == nil || img2?.accessibilityIdentifier == nil || img3?.accessibilityIdentifier == nil {
+//            mProductImage1.layer.borderColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+//            mProductImage2.layer.borderColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+//            mProductImage3.layer.borderColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+//            self.navigationController?.view.makeToast("Please Add Product Images")
+//            return
+//        }
+        
+        let imgArray = [img1, img2, img3]
+        
+        let product = StructProductForSignUp(productName: productName, businessCategory: category, subCategory: subCategory, price: price, units: units, address: addressArray, description: description, images: (imgArray as! [UIImage]), keywords: tagArray, highlights: shortDescription, isActive: true)
+        
+        delegate.addNewProductCallBack(product: product)
+        navigationController?.popViewController(animated: true)
+        //addProduct()
+    }
+    
+    func resetValidation() {
+        mProductName.errorMessage = ""
+        mSelectCategoryTf.errorMessage = ""
+        mSelectSubCategoryTf.errorMessage = ""
+        mPriceTf.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        mUnitTf.errorMessage = ""
+        mProductDescription.layer.borderColor = #colorLiteral(red: 0.9066892862, green: 0.9066892862, blue: 0.9066892862, alpha: 0.5034187478)
+        mShortDescription.errorMessage = ""
+        mProductImage1.layer.borderColor = #colorLiteral(red: 0.1333333333, green: 0.5490196078, blue: 0.1333333333, alpha: 1)
+        mProductImage2.layer.borderColor = #colorLiteral(red: 0.1333333333, green: 0.5490196078, blue: 0.1333333333, alpha: 1)
+        mProductImage3.layer.borderColor = #colorLiteral(red: 0.1333333333, green: 0.5490196078, blue: 0.1333333333, alpha: 1)
     }
     
     @IBAction func cancelBtnAction(_ sender: Any) {
@@ -254,12 +341,12 @@ class AddProductViewController: UIViewController {
     
     func addProduct() {
         
-        mSaveBtn.isHidden = false
-        mSaveAvtivityIndicator.isHidden = true
-        let params = NSMutableDictionary.init()
-        WebService.sharedObject().callWebservice(urlString: APIs.POST_ADD_PRODUCT, method: .post, dicParameters: params, allowHud: false) { (response, error) in
-            
-        }
+//        mSaveBtn.isHidden = false
+//        mSaveAvtivityIndicator.isHidden = true
+//        let params = NSMutableDictionary.init()
+//        WebService.sharedObject().callWebservice(urlString: APIs.POST_ADD_PRODUCT, method: .post, dicParameters: params, allowHud: false) { (response, error) in
+//
+//        }
         
     }
     

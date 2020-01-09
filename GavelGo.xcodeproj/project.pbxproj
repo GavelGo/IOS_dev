@@ -18,6 +18,7 @@
 		3D151B7F23B3C025000395C9 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D151B7E23B3C025000395C9 /* ForgotPasswordViewController.swift */; };
 		3D151B8223B3C205000395C9 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D151B8123B3C205000395C9 /* WebService.swift */; };
 		3D151B8423B3C9A7000395C9 /* APIResponseStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D151B8323B3C9A7000395C9 /* APIResponseStruct.swift */; };
+		3D4B51CE23C7B31A00F32708 /* StructProductForSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B51CD23C7B31A00F32708 /* StructProductForSignUp.swift */; };
 		3D8F593423AF2D6E00FA5A67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F593323AF2D6E00FA5A67 /* AppDelegate.swift */; };
 		3D8F593623AF2D6E00FA5A67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F593523AF2D6E00FA5A67 /* SceneDelegate.swift */; };
 		3D8F593823AF2D6E00FA5A67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F593723AF2D6E00FA5A67 /* ViewController.swift */; };
@@ -68,6 +69,7 @@
 		3D151B7E23B3C025000395C9 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		3D151B8123B3C205000395C9 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		3D151B8323B3C9A7000395C9 /* APIResponseStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseStruct.swift; sourceTree = "<group>"; };
+		3D4B51CD23C7B31A00F32708 /* StructProductForSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructProductForSignUp.swift; sourceTree = "<group>"; };
 		3D8F593023AF2D6E00FA5A67 /* GavelGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GavelGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8F593323AF2D6E00FA5A67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D8F593523AF2D6E00FA5A67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				3DB74AAA23C53CCA00AFF7A2 /* StructAddresses.swift */,
+				3D4B51CD23C7B31A00F32708 /* StructProductForSignUp.swift */,
 			);
 			path = SignUpModels;
 			sourceTree = "<group>";
@@ -342,9 +345,9 @@
 			isa = PBXGroup;
 			children = (
 				3DF3D34123B5188900F3C708 /* PartnerViewController.swift */,
+				3DFF72D423C3CBA60087E034 /* ProductListViewController.swift */,
 				3DF3D34523B5520300F3C708 /* AddProductViewController.swift */,
 				3DB5FE4023BAB8B4006D2287 /* SelectCategoryViewController.swift */,
-				3DFF72D423C3CBA60087E034 /* ProductListViewController.swift */,
 				3DB74AA523C5374D00AFF7A2 /* AddressesViewController.swift */,
 				3DB74AA723C5376A00AFF7A2 /* BSAddAddressViewController.swift */,
 			);
@@ -503,6 +506,7 @@
 				3DB5FE3F23BAAB33006D2287 /* HomeCollectionViewCell.swift in Sources */,
 				3DF9153423B3D26200F28F52 /* APIs.swift in Sources */,
 				3DDB92E423B8AA6200333E82 /* StructProduct.swift in Sources */,
+				3D4B51CE23C7B31A00F32708 /* StructProductForSignUp.swift in Sources */,
 				3DD57BF323B15C7900819C4A /* ProductInfoViewController.swift in Sources */,
 				3DFBC0C423AF78F9003EF278 /* SettingsViewController.swift in Sources */,
 				3DF3D34423B51C9000F3C708 /* JCUIImagePickerManager.swift in Sources */,
