@@ -42,9 +42,9 @@ class ProductListViewController: UIViewController {
     
     @IBAction func addProductAction(_ sender: Any) {
         
-        let vc = storyboard?.instantiateViewController(identifier: "AddProductViewController") as! AddProductViewController
-        vc.signUpValues = signUpValues
-        vc.delegate = self
+        let vc = storyboard?.instantiateViewController(identifier: "SelectCategoriesViewController") as! SelectCategoriesViewController
+        //vc.signUpValues = signUpValues
+        //vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
         
     }

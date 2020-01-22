@@ -25,8 +25,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavigationBar()
-        
 //        mSearchView.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
 //        mSearchView.layer.borderWidth = 0.5
 //        mSearchView.layer.cornerRadius = 3
@@ -63,7 +61,11 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //navigationController?.navigationBar.isHidden = true
+        setupNavigationBar()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.parent?.navigationItem.rightBarButtonItems = nil
     }
 
     func setupNavigationBar() {

@@ -9,6 +9,7 @@
 import Foundation
 struct StructAddresses {
     let shopName: String?
+    let phoneNumber: String?
     let suite: String?
     let address: String?
     let city: String?

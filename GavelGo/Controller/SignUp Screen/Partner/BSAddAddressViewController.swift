@@ -16,6 +16,7 @@ protocol PBSAddAddressDelegate {
 class BSAddAddressViewController: UIViewController {
     
     @IBOutlet weak var mShopName: SkyFloatingLabelTextField!
+    @IBOutlet weak var mPhoneNumber: SkyFloatingLabelTextField!
     @IBOutlet weak var mSuite: SkyFloatingLabelTextField!
     @IBOutlet weak var mAddress: SkyFloatingLabelTextField!
     @IBOutlet weak var mCity: SkyFloatingLabelTextField!
@@ -34,13 +35,14 @@ class BSAddAddressViewController: UIViewController {
     @IBAction func addProductAction(_ sender: Any) {
         
         let shopName = mShopName.text?.trimmingCharacters(in: .whitespaces)
+        let phoneNumber = mPhoneNumber.text?.trimmingCharacters(in: .whitespaces)
         let suite = mSuite.text?.trimmingCharacters(in: .whitespaces)
         let address = mAddress.text?.trimmingCharacters(in: .whitespaces)
         let city = mCity.text?.trimmingCharacters(in: .whitespaces)
         let state = mState.text?.trimmingCharacters(in: .whitespaces)
         let zipCode = mZipCode.text?.trimmingCharacters(in: .whitespaces)
         
-        delegate.onBsAddAddressCallBack(data: StructAddresses(shopName: shopName, suite: suite, address: address, city: city, state: state, zipCode: zipCode))
+        delegate.onBsAddAddressCallBack(data: StructAddresses(shopName: shopName, phoneNumber: phoneNumber, suite: suite, address: address, city: city, state: state, zipCode: zipCode))
         dismiss(animated: true, completion: nil)
     }
     

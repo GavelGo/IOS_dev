@@ -16,16 +16,17 @@ protocol PAddressesDelegate {
 class AddressesViewController: UIViewController {
     
     @IBOutlet weak var mTableView: UITableView!
+    @IBOutlet weak var mNextBtn: UIButton!
     
     var addressArray = [StructAddresses]()
-    var delegate: PAddressesDelegate!
+    var delegate: PAddressesDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         mTableView.delegate = self
         mTableView.dataSource = self
-        
+        mNextBtn.layer.cornerRadius = 22.5
         if addressArray.isEmpty {
             addAddressAction(self)
         }
@@ -46,9 +47,13 @@ class AddressesViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        delegate.onAddressesCallBack(data: addressArray)
+        delegate?.onAddressesCallBack(data: addressArray)
     }
     
+    @IBAction func nextBtnAction(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "EffectiveDatesViewController") as! EffectiveDatesViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension AddressesViewController: UITableViewDelegate, UITableViewDataSource {

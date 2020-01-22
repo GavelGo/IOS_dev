@@ -32,6 +32,14 @@
 		3DB5FE3D23BAAB28006D2287 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5FE3C23BAAB28006D2287 /* HomeViewController.swift */; };
 		3DB5FE3F23BAAB33006D2287 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5FE3E23BAAB33006D2287 /* HomeCollectionViewCell.swift */; };
 		3DB5FE4123BAB8B4006D2287 /* SelectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5FE4023BAB8B4006D2287 /* SelectCategoryViewController.swift */; };
+		3DB6919923D2320C007E5026 /* SelectCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6919823D2320C007E5026 /* SelectCategoriesViewController.swift */; };
+		3DB6919B23D23245007E5026 /* KeywordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6919A23D23245007E5026 /* KeywordsViewController.swift */; };
+		3DB6919D23D2325B007E5026 /* AddPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6919C23D2325B007E5026 /* AddPhotosViewController.swift */; };
+		3DB6919F23D232D4007E5026 /* HighlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6919E23D232D4007E5026 /* HighlightsViewController.swift */; };
+		3DB691A123D232E6007E5026 /* SetupDealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB691A023D232E6007E5026 /* SetupDealViewController.swift */; };
+		3DB691A323D23312007E5026 /* EffectiveDatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB691A223D23312007E5026 /* EffectiveDatesViewController.swift */; };
+		3DB691A523D2331F007E5026 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB691A423D2331F007E5026 /* AgreementViewController.swift */; };
+		3DB691A723D2332A007E5026 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB691A623D2332A007E5026 /* SuccessViewController.swift */; };
 		3DB74AA623C5374D00AFF7A2 /* AddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB74AA523C5374D00AFF7A2 /* AddressesViewController.swift */; };
 		3DB74AA823C5376A00AFF7A2 /* BSAddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB74AA723C5376A00AFF7A2 /* BSAddAddressViewController.swift */; };
 		3DB74AAB23C53CCA00AFF7A2 /* StructAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB74AAA23C53CCA00AFF7A2 /* StructAddresses.swift */; };
@@ -85,6 +93,14 @@
 		3DB5FE3C23BAAB28006D2287 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3DB5FE3E23BAAB33006D2287 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		3DB5FE4023BAB8B4006D2287 /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewController.swift; sourceTree = "<group>"; };
+		3DB6919823D2320C007E5026 /* SelectCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoriesViewController.swift; sourceTree = "<group>"; };
+		3DB6919A23D23245007E5026 /* KeywordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordsViewController.swift; sourceTree = "<group>"; };
+		3DB6919C23D2325B007E5026 /* AddPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotosViewController.swift; sourceTree = "<group>"; };
+		3DB6919E23D232D4007E5026 /* HighlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsViewController.swift; sourceTree = "<group>"; };
+		3DB691A023D232E6007E5026 /* SetupDealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupDealViewController.swift; sourceTree = "<group>"; };
+		3DB691A223D23312007E5026 /* EffectiveDatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectiveDatesViewController.swift; sourceTree = "<group>"; };
+		3DB691A423D2331F007E5026 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
+		3DB691A623D2332A007E5026 /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 		3DB74AA523C5374D00AFF7A2 /* AddressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesViewController.swift; sourceTree = "<group>"; };
 		3DB74AA723C5376A00AFF7A2 /* BSAddAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSAddAddressViewController.swift; sourceTree = "<group>"; };
 		3DB74AAA23C53CCA00AFF7A2 /* StructAddresses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructAddresses.swift; sourceTree = "<group>"; };
@@ -302,6 +318,21 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		3DB6919723D231EB007E5026 /* AddProduct */ = {
+			isa = PBXGroup;
+			children = (
+				3DB6919823D2320C007E5026 /* SelectCategoriesViewController.swift */,
+				3DB6919A23D23245007E5026 /* KeywordsViewController.swift */,
+				3DB6919C23D2325B007E5026 /* AddPhotosViewController.swift */,
+				3DB6919E23D232D4007E5026 /* HighlightsViewController.swift */,
+				3DB691A023D232E6007E5026 /* SetupDealViewController.swift */,
+				3DB691A223D23312007E5026 /* EffectiveDatesViewController.swift */,
+				3DB691A423D2331F007E5026 /* AgreementViewController.swift */,
+				3DB691A623D2332A007E5026 /* SuccessViewController.swift */,
+			);
+			path = AddProduct;
+			sourceTree = "<group>";
+		};
 		3DB74AA923C53CA400AFF7A2 /* SignUpModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +375,7 @@
 		3DFF72D223C3CB200087E034 /* Partner */ = {
 			isa = PBXGroup;
 			children = (
+				3DB6919723D231EB007E5026 /* AddProduct */,
 				3DF3D34123B5188900F3C708 /* PartnerViewController.swift */,
 				3DFF72D423C3CBA60087E034 /* ProductListViewController.swift */,
 				3DF3D34523B5520300F3C708 /* AddProductViewController.swift */,
@@ -499,7 +531,9 @@
 				3DDCCB5F23B7CB0600E55E70 /* StructSubCategories.swift in Sources */,
 				3D151B7F23B3C025000395C9 /* ForgotPasswordViewController.swift in Sources */,
 				3DB5FE4123BAB8B4006D2287 /* SelectCategoryViewController.swift in Sources */,
+				3DB691A323D23312007E5026 /* EffectiveDatesViewController.swift in Sources */,
 				3DFBC0C023AF78D7003EF278 /* NotificationViewController.swift in Sources */,
+				3DB6919923D2320C007E5026 /* SelectCategoriesViewController.swift in Sources */,
 				3D8F593823AF2D6E00FA5A67 /* ViewController.swift in Sources */,
 				3DFBC0C923AF7C48003EF278 /* Utils.swift in Sources */,
 				3D151B8223B3C205000395C9 /* WebService.swift in Sources */,
@@ -510,6 +544,7 @@
 				3DD57BF323B15C7900819C4A /* ProductInfoViewController.swift in Sources */,
 				3DFBC0C423AF78F9003EF278 /* SettingsViewController.swift in Sources */,
 				3DF3D34423B51C9000F3C708 /* JCUIImagePickerManager.swift in Sources */,
+				3DB6919D23D2325B007E5026 /* AddPhotosViewController.swift in Sources */,
 				3D8F593423AF2D6E00FA5A67 /* AppDelegate.swift in Sources */,
 				3DF3D34223B5188900F3C708 /* PartnerViewController.swift in Sources */,
 				3DB5FE3D23BAAB28006D2287 /* HomeViewController.swift in Sources */,
@@ -518,18 +553,23 @@
 				3DF3D34823B553DC00F3C708 /* StructCategories.swift in Sources */,
 				3DB74AA823C5376A00AFF7A2 /* BSAddAddressViewController.swift in Sources */,
 				3D004AED23BE681E00755ED1 /* ChatDataSource.swift in Sources */,
+				3DB691A523D2331F007E5026 /* AgreementViewController.swift in Sources */,
 				3DB5FE3123BA9735006D2287 /* HomeSearchViewController.swift in Sources */,
 				3DB5FE2E23BA95C3006D2287 /* HomePagerViewController.swift in Sources */,
 				3D004AEB23BE5E4A00755ED1 /* ChatViewController.swift in Sources */,
 				3D151B8423B3C9A7000395C9 /* APIResponseStruct.swift in Sources */,
+				3DB691A123D232E6007E5026 /* SetupDealViewController.swift in Sources */,
 				3DB5101923B13468007403A7 /* SignUpViewController.swift in Sources */,
+				3DB6919B23D23245007E5026 /* KeywordsViewController.swift in Sources */,
 				3D004AFE23BE702200755ED1 /* ChatMsgFactory.swift in Sources */,
 				3D004AF523BE6DD400755ED1 /* ChatTextMsgModel.swift in Sources */,
 				3D004AF123BE6AD700755ED1 /* TextMsgModel.swift in Sources */,
 				3D8F593623AF2D6E00FA5A67 /* SceneDelegate.swift in Sources */,
 				3DD57BEF23B14D3100819C4A /* ConsumerViewController.swift in Sources */,
+				3DB6919F23D232D4007E5026 /* HighlightsViewController.swift in Sources */,
 				3D004AF323BE6B7E00755ED1 /* BaseMsgModel.swift in Sources */,
 				3DFBC0C623AF7981003EF278 /* HomeTabBarViewController.swift in Sources */,
+				3DB691A723D2332A007E5026 /* SuccessViewController.swift in Sources */,
 				3D004AEF23BE690B00755ED1 /* SlidingDataSource.swift in Sources */,
 				3DFBC0C223AF78E5003EF278 /* MesasgeViewController.swift in Sources */,
 				3D004AF723BE6E4F00755ED1 /* ChatMsgSender.swift in Sources */,
@@ -682,13 +722,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B7SJ84S9JU;
+				DEVELOPMENT_TEAM = 26VP9L3KAS;
 				INFOPLIST_FILE = GavelGo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobile.GavelGo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.GavelGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -701,13 +742,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B7SJ84S9JU;
+				DEVELOPMENT_TEAM = 26VP9L3KAS;
 				INFOPLIST_FILE = GavelGo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobile.GavelGo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.GavelGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

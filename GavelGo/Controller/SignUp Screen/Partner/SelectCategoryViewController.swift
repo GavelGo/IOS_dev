@@ -68,7 +68,7 @@ class SelectCategoryViewController: UIViewController {
             
             if let leftView = textfield.leftView as? UIImageView {
                 leftView.image = leftView.image?.withRenderingMode(.alwaysTemplate)
-                leftView.tintColor = #colorLiteral(red: 0.1333333333, green: 0.5490196078, blue: 0.1333333333, alpha: 1)
+                leftView.tintColor = #colorLiteral(red: 0.03137254902, green: 0.6823529412, blue: 0.6196078431, alpha: 1)
             }
 
         }
