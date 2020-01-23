@@ -68,7 +68,9 @@ class ViewController: UIViewController {
             mPassword.errorMessage = ""
         }
 
-        authentication(userName: userName, password: password)
+        //authentication(userName: userName, password: password)
+        login(token: "", userName: userName, password: password)
+        
     }
     
     @IBAction func signUpAction(_ sender: Any) {
@@ -113,12 +115,17 @@ class ViewController: UIViewController {
     
     func login(token: String, userName: String, password: String) {
         
+        self.view.endEditing(true)
+        mSignInBtn.isHidden = true
+        mSignInIndicator.isHidden = false
+        mSignInIndicator.startAnimating()
+        
         let params = NSMutableDictionary.init()
         params.addEntries(from: ["username" : userName,
-                                 "Authorization" : token,
+                                 //"Authorization" : token,
                                  "password" : password])
         
-        WebService.sharedObject().callWebservice(urlString: APIs.POST_LOGIN, method: .post, dicParameters: params, allowHud: false) { (response, error) in
+        WebService.sharedObject().callWebservice(urlString: APIs.POST_LOGIN, method: .get, dicParameters: params, allowHud: false) { (response, error) in
             
             self.mSignInIndicator.stopAnimating()
             self.mSignInIndicator.isHidden = true

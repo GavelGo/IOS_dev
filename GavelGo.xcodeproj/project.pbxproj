@@ -280,9 +280,9 @@
 			children = (
 				3DB5FE2D23BA95C3006D2287 /* HomePagerViewController.swift */,
 				3DB5FE3023BA9735006D2287 /* HomeSearchViewController.swift */,
-				3DB5FE3523BA9C28006D2287 /* MostPopularViewController.swift */,
 				3DB5FE3C23BAAB28006D2287 /* HomeViewController.swift */,
 				3DD57BF223B15C7900819C4A /* ProductInfoViewController.swift */,
+				3DB5FE3523BA9C28006D2287 /* MostPopularViewController.swift */,
 				3DFBC0CA23AF8212003EF278 /* Cell */,
 			);
 			path = Home;

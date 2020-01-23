@@ -10,6 +10,7 @@ import UIKit
 import SDWebImage
 import CoreLocation
 import Toast_Swift
+import MaterialComponents
 
 class HomeViewController: UIViewController {
 
@@ -43,16 +44,25 @@ class HomeViewController: UIViewController {
 //        }
         
         
-        let cellWidth : CGFloat = mCollectionView.frame.size.width / 3.0 - 8
-        let cellheight : CGFloat = 195
-        let cellSize = CGSize(width: cellWidth , height:cellheight)
+//        let cellWidth : CGFloat = mCollectionView.frame.size.width / 3.0 - 8
+//        let cellheight : CGFloat = 195
+//        let cellSize = CGSize(width: cellWidth , height:cellheight)
+        
+        let noOfCellsInRow = 3
 
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical //.horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 8)
+        layout.minimumLineSpacing = 4.0
+        layout.minimumInteritemSpacing = 4.0
+        
+        let totalSpace = layout.sectionInset.left
+            + layout.sectionInset.right
+            + (layout.minimumInteritemSpacing * CGFloat(noOfCellsInRow - 1))
+        let size = Int((mCollectionView.bounds.width - totalSpace) / CGFloat(noOfCellsInRow))
+        let cellSize = CGSize(width: size, height: 190)
         layout.itemSize = cellSize
-        layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
-        layout.minimumLineSpacing = 1.0
-        layout.minimumInteritemSpacing = 1.0
+        
         mCollectionView.setCollectionViewLayout(layout, animated: true)
 
         getProducts()
@@ -149,21 +159,25 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
         
+        let data = mData[indexPath.item]
+        
+        cell.mImageView.sd_setImage(with: URL(string: data.photos?.first?.photopath ?? ""), completed: nil)
+        let price = data.price!
+        cell.mPrice.text = "$ \(String(describing: price))"
+        cell.mName.text = data.title
+        cell.mCategory.text = data.categoryName
+        cell.mOwnerName.text = data.businessName
+        
         // If you wanted to have the card show the selected state when tapped
         // then you need to turn isSelectable to true, otherwise the default is false.
         //cell.isSelectable = true
         
         cell.cornerRadius = 4
-        cell.shadowElevation(for: .selected)
-        cell.setShadowColor(UIColor.black, for: .highlighted)
+        cell.setShadowElevation(ShadowElevation(rawValue: 2), for: .normal)
+        cell.setShadowColor(UIColor.gray, for: .highlighted)
         
-        let data = mData[indexPath.item]
-        
-        //cell.mImageView.sd_setImage(with: URL(string: data.img), completed: nil)
-        let price: Int = data.price!
-        cell.mPrice.text = "$ \(String(describing: price))"
-        cell.mName.text = data.title
-        cell.mCategory.text = data.categoryName
+        cell.contentView.layer.masksToBounds = true
+        cell.layer.masksToBounds = false
         
         return cell
         
@@ -174,8 +188,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         collectionView.deselectItem(at: indexPath, animated: true)
         print("Click Product... \(storyboard)")
         let vc = storyboard?.instantiateViewController(withIdentifier: "ProductInfoViewController") as! ProductInfoViewController
-        //self.parent?.navigationController?.pushViewController(vc, animated: true)
-        //self.navigationController?.topViewController?.navigationController?.pushViewController(vc, animated: true)
+        vc.mData = mData[indexPath.item]
         self.mNavigationViewController?.pushViewController(vc, animated: true)
         
     }

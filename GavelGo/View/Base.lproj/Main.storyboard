@@ -135,7 +135,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fqV-Ye-33G">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqV-Ye-33G">
                                 <rect key="frame" x="20" y="138" width="335" height="391.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_with_title" translatesAutoresizingMaskIntoConstraints="NO" id="Uqp-lD-MJz">
@@ -144,13 +144,13 @@
                                             <constraint firstAttribute="height" constant="30" id="CFu-ST-tLo"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CN5-BI-Axn" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CN5-BI-Axn" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                         <rect key="frame" x="8" y="78" width="319" height="43"/>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZ5-gC-FG4" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZ5-gC-FG4" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                         <rect key="frame" x="8" y="129" width="319" height="42.5"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsF-53-uBx">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsF-53-uBx">
                                         <rect key="frame" x="204" y="181.5" width="123" height="30"/>
                                         <state key="normal" title="Forgot password?">
                                             <color key="titleColor" red="0.031372549020000001" green="0.68235294120000001" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -160,7 +160,7 @@
                                             <segue destination="Hfy-Gp-iCa" kind="show" id="JPe-Jl-OPi"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SZl-M8-31E">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZl-M8-31E">
                                         <rect key="frame" x="107.5" y="219.5" width="120" height="40"/>
                                         <subviews>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="8Fy-BS-4Hl">
@@ -190,13 +190,13 @@
                                             <constraint firstItem="8Fy-BS-4Hl" firstAttribute="centerX" secondItem="SZl-M8-31E" secondAttribute="centerX" id="tRJ-qs-iQv"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="New to GavelGo?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DV9-BM-Df1">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New to GavelGo?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DV9-BM-Df1">
                                         <rect key="frame" x="101.5" y="289.5" width="132" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.031372549020000001" green="0.68235294120000001" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkx-jh-EHf">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkx-jh-EHf">
                                         <rect key="frame" x="135" y="320.5" width="65" height="32"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                         <state key="normal" title="Sign Up">
@@ -206,7 +206,7 @@
                                             <action selector="signUpAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MHB-XY-VxJ"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="No. of incorrect attempts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsB-ug-EuN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No. of incorrect attempts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsB-ug-EuN">
                                         <rect key="frame" x="71.5" y="362.5" width="192" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -766,7 +766,7 @@
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gl7-We-OBN" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gl7-We-OBN" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                 <rect key="frame" x="16" y="282" width="343" height="43"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -1384,7 +1384,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="81z-uz-ce8">
-                                <rect key="frame" x="20" y="76" width="335" height="515"/>
+                                <rect key="frame" x="20" y="94" width="335" height="479"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIm-gS-gkq">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="92"/>
@@ -1420,7 +1420,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Profile Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgU-Ud-xPf">
-                                                <rect key="frame" x="77" y="31" width="142" height="15.5"/>
+                                                <rect key="frame" x="77" y="30.5" width="142" height="15.5"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1448,16 +1448,16 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AiQ-ec-xvD">
-                                        <rect key="frame" x="0.0" y="185" width="335" height="50"/>
+                                        <rect key="frame" x="0.0" y="185" width="335" height="43"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gb1-er-2go" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="43"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="First Name"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Cs-Pe-Ebi" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="171.5" y="0.0" width="163.5" height="50"/>
+                                                <rect key="frame" x="171.5" y="0.0" width="163.5" height="43"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Last Name"/>
                                                 </userDefinedRuntimeAttributes>
@@ -1465,22 +1465,22 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HX4-PV-zrT" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="0.0" y="243" width="335" height="50"/>
+                                        <rect key="frame" x="0.0" y="236" width="335" height="42.5"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Phone # (000)-000-000"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JNl-Lz-yyl">
-                                        <rect key="frame" x="0.0" y="301" width="335" height="50"/>
+                                        <rect key="frame" x="0.0" y="286.5" width="335" height="43"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e27-aG-OsW" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="0.0" y="0.0" width="218" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="218" height="43"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Address (#Street)"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YN4-Cn-YrF" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="226" y="0.0" width="109" height="50"/>
+                                                <rect key="frame" x="226" y="0.0" width="109" height="43"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Apt/Suite"/>
                                                 </userDefinedRuntimeAttributes>
@@ -1491,22 +1491,22 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hzk-gt-hPB">
-                                        <rect key="frame" x="0.0" y="359" width="335" height="50"/>
+                                        <rect key="frame" x="0.0" y="337.5" width="335" height="42.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3d-eX-6wS" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="0.0" y="0.0" width="106.5" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="106.5" height="42.5"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="City"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fz-JZ-ryZ" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="114.5" y="0.0" width="106" height="50"/>
+                                                <rect key="frame" x="114.5" y="0.0" width="106" height="42.5"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="State"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhw-Mk-k03" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="228.5" y="0.0" width="106.5" height="50"/>
+                                                <rect key="frame" x="228.5" y="0.0" width="106.5" height="42.5"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Zipcode"/>
                                                 </userDefinedRuntimeAttributes>
@@ -1514,13 +1514,13 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIF-H5-J8e" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="0.0" y="417" width="335" height="50"/>
+                                        <rect key="frame" x="0.0" y="388" width="335" height="43"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Description"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Hrk-ws-d1c">
-                                        <rect key="frame" x="0.0" y="475" width="335" height="40"/>
+                                        <rect key="frame" x="0.0" y="439" width="335" height="40"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULA-84-36y">
                                                 <rect key="frame" x="0.0" y="0.0" width="147.5" height="40"/>
@@ -1705,7 +1705,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7uW-Ar-LuS">
-                                <rect key="frame" x="10" y="110.5" width="355" height="415"/>
+                                <rect key="frame" x="10" y="110.5" width="355" height="379"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uop-Gb-sfc">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="77"/>
@@ -1748,16 +1748,16 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gog-So-Qlz">
-                                        <rect key="frame" x="0.0" y="85" width="355" height="50"/>
+                                        <rect key="frame" x="0.0" y="85" width="355" height="43"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hge-f0-80v" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="0.0" y="0.0" width="173.5" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="173.5" height="43"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="First Name"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPV-Pp-12g" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="181.5" y="0.0" width="173.5" height="50"/>
+                                                <rect key="frame" x="181.5" y="0.0" width="173.5" height="43"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Last Name"/>
                                                 </userDefinedRuntimeAttributes>
@@ -1765,22 +1765,22 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0D-uW-16h" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="0.0" y="143" width="355" height="50"/>
+                                        <rect key="frame" x="0.0" y="136" width="355" height="42.5"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Phone # (000)-000-000"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mrm-zT-XIP">
-                                        <rect key="frame" x="0.0" y="201" width="355" height="50"/>
+                                        <rect key="frame" x="0.0" y="186.5" width="355" height="43"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kf-fY-CoJ" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="0.0" y="0.0" width="231.5" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="231.5" height="43"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Address (#Street)"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="05g-XA-vjZ" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="239.5" y="0.0" width="115.5" height="50"/>
+                                                <rect key="frame" x="239.5" y="0.0" width="115.5" height="43"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Apt/Suite"/>
                                                 </userDefinedRuntimeAttributes>
@@ -1791,22 +1791,22 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1yc-DM-OyY">
-                                        <rect key="frame" x="0.0" y="259" width="355" height="50"/>
+                                        <rect key="frame" x="0.0" y="237.5" width="355" height="42.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZh-3f-9Va" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="0.0" y="0.0" width="113" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="113" height="42.5"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="City"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DW1-n2-kro" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="121" y="0.0" width="113" height="50"/>
+                                                <rect key="frame" x="121" y="0.0" width="113" height="42.5"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="State"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tx7-hK-JZ6" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="242" y="0.0" width="113" height="50"/>
+                                                <rect key="frame" x="242" y="0.0" width="113" height="42.5"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Zipcode"/>
                                                 </userDefinedRuntimeAttributes>
@@ -1814,13 +1814,13 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mS6-7Z-3iP" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="0.0" y="317" width="355" height="50"/>
+                                        <rect key="frame" x="0.0" y="288" width="355" height="43"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Description"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="BUc-kg-cvS">
-                                        <rect key="frame" x="0.0" y="375" width="355" height="40"/>
+                                        <rect key="frame" x="0.0" y="339" width="355" height="40"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AYp-Ye-9qR">
                                                 <rect key="frame" x="0.0" y="0.0" width="157.5" height="40"/>
@@ -2441,10 +2441,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcN-10-fwd">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pcN-10-fwd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HDM-2g-4Lr" userLabel="ContentView">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HDM-2g-4Lr" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r0G-0X-6zy" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
@@ -2532,7 +2532,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8YM-af-8fY" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="177.5" y="0.0" width="157.5" height="50"/>
+                                                        <rect key="frame" x="177.5" y="3.5" width="157.5" height="43"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Units"/>
                                                         </userDefinedRuntimeAttributes>
@@ -2643,7 +2643,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="iNW-Yo-lJ4">
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="iNW-Yo-lJ4">
                                                 <rect key="frame" x="20" y="840" width="335" height="40"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4P-6F-voy">
@@ -3619,42 +3619,52 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qMY-H5-Fkj">
                                                     <rect key="frame" x="0.0" y="0.0" width="158" height="120"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" secondItem="qMY-H5-Fkj" secondAttribute="height" multiplier="79:60" id="PKO-s8-akh"/>
                                                         <constraint firstAttribute="height" constant="120" id="bWn-4d-5Bp"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meG-l4-ISd">
-                                                    <rect key="frame" x="8" y="128" width="142" height="17.5"/>
+                                                    <rect key="frame" x="8" y="230" width="142" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Oil change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Unr-bb-BAT">
-                                                    <rect key="frame" x="8" y="153.5" width="142" height="15.5"/>
+                                                    <rect key="frame" x="8" y="149" width="142" height="15.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Panda oil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27x-jq-Uok">
-                                                    <rect key="frame" x="8" y="177" width="142" height="13"/>
+                                                    <rect key="frame" x="8" y="128" width="142" height="13"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H80-ob-nDH">
+                                                    <rect key="frame" x="8" y="172.5" width="142" height="13"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Unr-bb-BAT" firstAttribute="top" secondItem="27x-jq-Uok" secondAttribute="bottom" constant="8" id="1K4-4m-Fzu"/>
+                                                <constraint firstAttribute="bottom" secondItem="meG-l4-ISd" secondAttribute="bottom" constant="8" id="2ZW-tQ-SXe"/>
                                                 <constraint firstItem="qMY-H5-Fkj" firstAttribute="top" secondItem="Hiz-vh-LC5" secondAttribute="top" id="4L9-YG-ftR"/>
                                                 <constraint firstItem="Unr-bb-BAT" firstAttribute="leading" secondItem="Hiz-vh-LC5" secondAttribute="leading" constant="8" id="8Cb-HV-ixv"/>
-                                                <constraint firstItem="Unr-bb-BAT" firstAttribute="top" secondItem="meG-l4-ISd" secondAttribute="bottom" constant="8" id="NMN-yD-ykm"/>
+                                                <constraint firstItem="H80-ob-nDH" firstAttribute="top" secondItem="Unr-bb-BAT" secondAttribute="bottom" constant="8" id="D6f-1T-HuL"/>
+                                                <constraint firstAttribute="trailing" secondItem="H80-ob-nDH" secondAttribute="trailing" constant="8" id="Q0y-yj-HIB"/>
                                                 <constraint firstAttribute="trailing" secondItem="Unr-bb-BAT" secondAttribute="trailing" constant="8" id="XNB-2P-C60"/>
                                                 <constraint firstItem="27x-jq-Uok" firstAttribute="leading" secondItem="Hiz-vh-LC5" secondAttribute="leading" constant="8" id="bEv-bu-Z7a"/>
-                                                <constraint firstItem="27x-jq-Uok" firstAttribute="top" secondItem="Unr-bb-BAT" secondAttribute="bottom" constant="8" id="dOu-qP-C7W"/>
-                                                <constraint firstItem="meG-l4-ISd" firstAttribute="top" secondItem="qMY-H5-Fkj" secondAttribute="bottom" constant="8" id="dZY-JE-9JV"/>
                                                 <constraint firstAttribute="trailing" secondItem="27x-jq-Uok" secondAttribute="trailing" constant="8" id="eLs-OF-fYn"/>
+                                                <constraint firstItem="27x-jq-Uok" firstAttribute="top" secondItem="qMY-H5-Fkj" secondAttribute="bottom" constant="8" id="gGF-tk-bDa"/>
                                                 <constraint firstAttribute="trailing" secondItem="qMY-H5-Fkj" secondAttribute="trailing" id="jIC-WO-kpo"/>
                                                 <constraint firstItem="meG-l4-ISd" firstAttribute="leading" secondItem="Hiz-vh-LC5" secondAttribute="leading" constant="8" id="kTk-un-NQ4"/>
                                                 <constraint firstAttribute="trailing" secondItem="meG-l4-ISd" secondAttribute="trailing" constant="8" id="mvK-Dt-NmE"/>
+                                                <constraint firstItem="meG-l4-ISd" firstAttribute="top" secondItem="H80-ob-nDH" secondAttribute="bottom" constant="8" id="x1L-hJ-JXe"/>
                                                 <constraint firstItem="qMY-H5-Fkj" firstAttribute="leading" secondItem="Hiz-vh-LC5" secondAttribute="leading" id="yVG-Rz-hFJ"/>
-                                                <constraint firstAttribute="bottom" secondItem="27x-jq-Uok" secondAttribute="bottom" constant="8" id="zs8-Gs-ALS"/>
+                                                <constraint firstItem="H80-ob-nDH" firstAttribute="leading" secondItem="Hiz-vh-LC5" secondAttribute="leading" constant="8" id="yfw-kq-48J"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="158" height="284"/>
@@ -3662,10 +3672,15 @@
                                             <outlet property="mCategory" destination="27x-jq-Uok" id="Vcd-UU-2DN"/>
                                             <outlet property="mImageView" destination="qMY-H5-Fkj" id="Z49-Mt-lj8"/>
                                             <outlet property="mName" destination="Unr-bb-BAT" id="l9h-JO-2oM"/>
+                                            <outlet property="mOwnerName" destination="H80-ob-nDH" id="3sp-Uy-Z3z"/>
                                             <outlet property="mPrice" destination="meG-l4-ISd" id="wVC-8c-coH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="4Y3-X7-GBr" id="JW2-23-ejx"/>
+                                    <outlet property="delegate" destination="4Y3-X7-GBr" id="nXZ-Mb-yPy"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -3684,7 +3699,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NWh-mX-L0x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-668" y="2642"/>
+            <point key="canvasLocation" x="-668" y="2641.5292353823093"/>
         </scene>
         <!--Home Navigation Controller-->
         <scene sceneID="MvD-cF-poz">

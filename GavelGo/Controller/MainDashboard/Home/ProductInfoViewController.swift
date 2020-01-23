@@ -24,6 +24,8 @@ class ProductInfoViewController: UIViewController {
     @IBOutlet weak var mContactView: UIView!
     @IBOutlet weak var mFavBtn: FaveButton!
     
+    var mData: StructProduct!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -75,12 +77,18 @@ class ProductInfoViewController: UIViewController {
         mImageSlider.activityIndicator = DefaultActivityIndicator()
         mImageSlider.delegate = self
         
-        let img1 = SDWebImageSource(urlString: "https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080")!
-        let img2 = SDWebImageSource(urlString: "https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080")!
-        let img3 = SDWebImageSource(urlString: "https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080")!
-
+        var imgArray = [SDWebImageSource]()
+        
+        if let photos = mData.photos {
+            for item in photos {
+                if let img = SDWebImageSource(urlString: item.photopath ?? "") {
+                    imgArray.append(img)
+                }
+            }
+        }
+        
         // can be used with other sample sources as `afNetworkingSource`, `alamofireSource` or `sdWebImageSource` or `kingfisherSource`
-        mImageSlider.setImageInputs([img1, img2, img3])
+        mImageSlider.setImageInputs(imgArray)
 
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
         mImageSlider.addGestureRecognizer(recognizer)

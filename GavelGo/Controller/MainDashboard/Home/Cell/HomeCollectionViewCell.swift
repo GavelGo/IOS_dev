@@ -14,4 +14,5 @@ class HomeCollectionViewCell: MDCCardCollectionCell {
     @IBOutlet weak var mPrice: UILabel!
     @IBOutlet weak var mName: UILabel!
     @IBOutlet weak var mCategory: UILabel!
+    @IBOutlet weak var mOwnerName: UILabel!
 }

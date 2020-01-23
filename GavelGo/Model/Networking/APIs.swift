@@ -11,6 +11,7 @@ import Foundation
 class APIs {
     
     static let BASE_URL = "http://jessgo.mr47w8dp7c.us-east-2.elasticbeanstalk.com/"
+    static let BASE_URL_M = "http://jessgo.mr47w8dp7c.us-east-2.elasticbeanstalk.com/mlogin/"
     
     //MARK: GET METHODS
     static let GET_CATEGORY = APIs.BASE_URL + "category"
@@ -27,7 +28,7 @@ class APIs {
     static let POST_AUTH = APIs.BASE_URL + "authenticate" //To get token
     static let POST_REGISTER_NEW_USER = APIs.BASE_URL + "register" //username,password
     static let POST_REGISTER_NEW_PARTNER = APIs.BASE_URL + "regPartner" //username,password
-    static let POST_LOGIN = APIs.BASE_URL + "login" //username,password
+    static let POST_LOGIN = APIs.BASE_URL_M + "login" //username,password
     static let POST_ADD_ROLE = APIs.BASE_URL + "role" //"roleName":"SITE_PARTNER","description":"SITE PARTNER"
     static let POST_ADD_PRODUCT = APIs.BASE_URL + "product" //categoryId, categoryName, title, description, subCategoryId, subCategoryName, productOwner, userName
     static let POST_ADD_PRODUCT_PHOTO = APIs.BASE_URL + "productPhoto" //username, photoname, productId, productOwner ( + image file)
